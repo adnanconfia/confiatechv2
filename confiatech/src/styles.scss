@@ -1,0 +1,142 @@
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../src/app/utils/colors/color.scss';
+@import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.css";
+
+body{
+    background-color: $light;
+    font-family: "Inter",sans-serif !important;
+}
+
+.sideBar-Nav {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+
+    li {
+      padding: 16px 0px;
+        text-align: center;
+      a{
+        text-decoration: none;
+        font-size: 20px !important;
+        color: $dark;
+        font-weight: 400;
+      
+        span {
+          margin-right: 10px !important;
+        }
+      }
+      &:last-child{
+       a{
+        color: $light;
+       }
+    }
+
+      &:hover,
+      &.active {
+
+       
+        a {
+          color: $confia-dark-green;
+        }
+      }
+    }
+  }
+.cursor-pointer{
+    cursor: pointer !important;
+}
+.navbar-nav .nav-link.active{
+    color:$confia-aqua;
+}
+.nav-link { font-size: 14px !important;
+    &:hover{
+        color:$confia-aqua
+
+    }
+    margin-right: 5px !important;
+}
+.heroBtnHover{
+    &:hover{
+        background-color: $light;
+        border: 1px solid $confia-dark-green;
+        color: $confia-dark-green;
+    }   
+}
+
+.border-dark-green{
+    border-color: $confia-dark-green;
+}
+.btn{
+    &:hover{
+        opacity: 0.8 !important;
+    }
+}
+
+//padding 
+.pt-20rem{
+    padding-top: 20rem !important;
+}
+.pt-9rem{
+    padding-top: 9rem !important;
+}
+.me-min-8{
+    margin-right: -8%  !important;
+}
+//borders
+.br-12px{
+    border-radius: 12px !important;
+}
+.br-6px{
+    border-radius: 6px !important;
+}
+//fonts
+.fs-hero-h1 {
+    font-size: clamp(1rem, 0.7rem + 2.4vw, 2.5rem);
+  }
+  .fw-700{
+    font-weight: 700;
+  }
+  .fw-400{
+    font-weight: 400 !important;
+  }
+  .fw-bold{
+    font-weight: bold !important;
+  }
+  .fs-16px{
+    font-size: 16px;;
+  }
+  .fs-14px{
+    font-size: 14px !important;
+  }
+//colors
+.bg-dark-green{
+    background-color: $confia-dark-green;
+}
+.text-dark-green{
+    color:$confia-dark-green
+}
+.text-aqua{
+    color:$confia-aqua
+}
+.text-light{
+    color:$confia-light
+}
+
+//widht-height
+.w-64px{
+    width: 64px ;
+}
+.h-64px{
+    height:  64px ;
+}
+.max-w-2560{
+    max-width: 2560px;
+    margin: 0 auto;
+  }
+
+  .logo{
+    max-width: 200px;
+  }
