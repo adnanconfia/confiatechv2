@@ -1,0 +1,122 @@
+<div class="w-100 py-5">
+    <div class="container  py-5">
+        <div class="row">
+            <div class="col-12 text-center text-sm-start ">
+                
+                <h1 class="text-dark-green mx-0 px-0   fw-bold">Our Trusted Allies</h1>
+                </div>
+        </div>
+       <div class="navigation-wrapper">
+        <div class="keen-slider mt-5" #sliderRef>
+            <div class="keen-slider__slide number-slide1">
+                <a href="https://kazaroo.app" target="_blank">
+                    <img ngSrc="../../../assets/clients/kazaroo.png" alt="kazaroo"  width="200" height="100" loading="lazy" fetchpriority="low" >
+                </a>
+            </div>
+            <div class="keen-slider__slide number-slide1">
+                <a href="https://app.visu.network" target="_blank">
+                <img ngSrc="../../../assets/clients/visu.png"  width="200" height="100" loading="lazy" alt="visu" fetchpriority="low" >
+                </a>
+            </div>
+            <div class="keen-slider__slide number-slide1">
+                <a href="https://newtothestreet.com" target="_blank">
+                <img ngSrc="../../../assets/clients/ntts.png"  width="200" height="100" alt="new to the street" loading="lazy" fetchpriority="low" >
+            </a></div>
+            <div class="keen-slider__slide number-slide1">
+                <a href="https://sequest-consulting.com" target="_blank">
+                <img ngSrc="../../../assets/clients/sequest.png"  width="200" height="100" loading="lazy" alt="sequest-consulting" fetchpriority="low" >
+                </a></div>
+            <div class="keen-slider__slide number-slide1">
+                <a href="https://loomcentric.com" target="_blank">
+                <img ngSrc="../../../assets/clients/loomCentric.png"   width="200" height="100"  alt="Loom Centric" loading="lazy" fetchpriority="low" >
+                </a> </div>
+           
+            <div class="keen-slider__slide number-slide1">
+                <a href="javascript:void(0)" target="_blank">
+                <img ngSrc="../../../assets/clients/pixely.png"  alt="pixely"  width="200" height="100" loading="lazy" fetchpriority="low" >
+                </a>
+            </div>
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="https://ims.confiatech.com" target="_blank">
+                <img ngSrc="../../../assets/clients/axis.png"  width="200" height="100" alt="Axis IMS" loading="lazy" fetchpriority="low" >
+                </a>
+            </div>
+           
+      
+            <div class="keen-slider__slide number-slide1">
+           
+                 
+                <a href="https://multidot.co.uk/" target="_blank">
+                <img ngSrc="../../../assets/clients/multidot.png"  width="200" height="100" alt="Multidot" loading="lazy" fetchpriority="low" >
+         </a>
+           </div>
+           
+      
+        
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="javascript:void(0)" target="_blank">
+                <img ngSrc="../../../assets/clients/pstack.png" alt="Presentation Stack"  width="200" height="100" loading="lazy" fetchpriority="low" >
+         </a>
+           </div>
+             
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="https://desiattachakki.com/" target="_blank">
+                <img ngSrc="../../../assets/clients/dac.png"  width="200" height="100"  loading="lazy" alt="Desi Atta Chakki" fetchpriority="low" >
+            </a>
+        </div>
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="https://alzubairmarinecargo.com/" target="_blank">
+                <img ngSrc="../../../assets/clients/alzubair.png" width="200" height="100" loading="lazy" fetchpriority="low" alt="Alzubair" >
+                </a>
+            </div>
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="https://furnive.com/" target="_blank">
+                <img ngSrc="../../../assets/clients/furnive.png" width="200" height="100" loading="lazy" fetchpriority="low" alt="Furniv" >
+                </a>
+            </div>
+            <div class="keen-slider__slide number-slide1">
+                
+                <a href="javascript:void(0)" target="_blank">
+                <img ngSrc="../../../assets/clients/arabDevsol.png"  width="200" height="100" loading="lazy" fetchpriority="low" alt="Arab Dev Sol">
+                </a>
+            </div>
+           
+          </div>
+         <div class="arrow arrow--left ">
+            <svg
+            [ngClass]="
+              ' arrow--left w-30px' + (currentSlide === 0 ? ' arrow--disabled' : '')
+            "
+            (click)="slider?.prev()"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+            />
+          </svg>
+         </div>
+         <div class="arrow arrow--right">
+  <svg
+    *ngIf="slider"
+    [ngClass]="
+      ' arrow--right w-30px' +
+      (slider.track.details.slides.length - 1 === currentSlide
+        ? ' arrow--disabled'
+        : '')
+    "
+    (click)="slider.next()"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
+    <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+  </svg>
+  </div>
+       </div>
+</div>
+</div>

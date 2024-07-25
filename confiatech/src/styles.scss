@@ -4,12 +4,23 @@
 @import '../src/app/utils/colors/color.scss';
 @import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
 @import "../node_modules/primeng/resources/primeng.css";
-
-body{
-    background-color: $light;
-    font-family: "Inter",sans-serif !important;
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+html{
+    scroll-behavior: smooth;
+    margin: 0 !important;
+    padding: 0 !important;
 }
-
+body{
+    background-color: $white;
+    font-family: "Inter",sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+p{
+    font-size: 15px;
+}
 .sideBar-Nav {
     list-style: none;
     margin: 0;
@@ -69,10 +80,12 @@ body{
 .border-dark-green{
     border-color: $confia-dark-green;
 }
-.btn{
-    &:hover{
-        opacity: 0.8 !important;
-    }
+.whiteBtnHover{
+ &:hover{
+    background-color: transparent !important;
+    border: 1px solid $light;
+    color: $light;
+ }
 }
 
 //padding 
@@ -89,15 +102,42 @@ body{
 .br-12px{
     border-radius: 12px !important;
 }
+.br-tl-12px{
+    border-top-left-radius: 12px;
+}
+.br-bl-12px{
+    border-bottom-left-radius: 12px;
+}
+.br-tr-12px{
+    border-top-right-radius: 12px;
+}
+.br-br-12px{
+    border-bottom-right-radius: 12px;
+}
 .br-6px{
     border-radius: 6px !important;
 }
+.border-dark-green{
+    border-color: $confia-dark-green !important;
+}
 //fonts
-.fs-hero-h1 {
-    font-size: clamp(1rem, 0.7rem + 2.4vw, 2.5rem);
+.fs-20px{
+    font-size: clamp(0.875rem, 0.8246rem + 0.2521vw, 1.25rem) !important;
+}
+.fs-hero-h1{
+    font-size: clamp(1.625rem, 1.3393rem + 1.4286vw, 3.75rem) !important;
+}
+h1 {
+    font-size: clamp(1.625rem, 1.3813rem + 1.2185vw, 3.4375rem) !important;
+  }
+  .line-height-1p3{
+    line-height: 1.3 !important;
   }
   .fw-700{
-    font-weight: 700;
+    font-weight: 700 !important;
+  }
+  .fw-300{
+    font-weight: 300 !important;
   }
   .fw-400{
     font-weight: 400 !important;
@@ -111,9 +151,18 @@ body{
   .fs-14px{
     font-size: 14px !important;
   }
+  .fs-13px{
+    font-size: 13px !important;
+  }
 //colors
 .bg-dark-green{
     background-color: $confia-dark-green;
+}
+.bg-light{
+    background-color: $light;
+}
+.bg-dark-green-o{
+    background-color: $confia-dark-green-o;
 }
 .text-dark-green{
     color:$confia-dark-green
@@ -121,16 +170,25 @@ body{
 .text-aqua{
     color:$confia-aqua
 }
-.text-light{
+.text-confia-light{
     color:$confia-light
+}
+.text-light{
+    color:$light
 }
 
 //widht-height
-.w-64px{
-    width: 64px ;
+.w-50px{
+    width: 50px ;
 }
-.h-64px{
-    height:  64px ;
+.w-110px{
+    width:110px;
+}
+.w-30px{
+    width: 30px;
+}
+.h-50px{
+    height:  50px ;
 }
 .max-w-2560{
     max-width: 2560px;

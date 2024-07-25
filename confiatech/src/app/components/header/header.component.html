@@ -1,68 +1,50 @@
-<div class="max-w-2560 ">
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img ngSrc="../../../assets/images/logo.png" alt="Logo" class="logo" width="200" height="51" loading="eager" fetchpriority="high" ></a>
-          <span class="navbar-toggler border-0 cursor-pointer" type="button" (click)="showSidebar()">
-            <span class="navbar-toggler-icon"></span>
-          </span>
-          <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
-              </li>
+<div class="w-100 header-shadow">
+    <div class="container-lg ">
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img ngSrc="../../../assets/images/logo.png" alt="Logo" class="logo" width="200" height="51" loading="eager" fetchpriority="high" ></a>
+              <span class="navbar-toggler border-0 cursor-pointer" type="button" (click)="showSidebar()">
+                <span class="navbar-toggler-icon"></span>
+              </span>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ng-container *ngFor="let item of urls">
+                        <li class="nav-item" *ngIf="item.type==='text'">
+                            <a class="nav-link " aria-current="page" [routerLinkActive]="'active'" [routerLink]="item.route">{{item.label}}</a>
+                          </li>
+                          <li class="nav-item" *ngIf="item.type==='button'">
+                            <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.route" ></confia-button>
+                         </li>
+                    </ng-container>
+                    
+                 
              
-              <li class="nav-item">
-                <a class="nav-link" href="#">Portfolio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blogs</a>
-              </li>
-    
-              <li class="nav-item">
-                <confia-button [content]="'GET A FREE QUOTE'" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" url="#" ></confia-button>
-             </li>
-             
-            </ul>
-          
-          </div>
-        </div>
-      </nav>
-      <p-sidebar [(visible)]="visible"  [fullScreen]="true">
-        <ng-template pTemplate="headless">
-           <div class="d-flex justify-content-between w-100 align-items-center p-5">
-            <a class="navbar-brand" href="#"><img ngSrc="../../../assets/images/logo.png" alt="Logo" class="logo" width="200" height="51" loading="eager" fetchpriority="high" ></a>
-            <span (click)="hideSidebar()" class="text-dark-green me-3"><fa-icon [icon]="close" size="2x"></fa-icon></span>
-           </div>
-           <ul class="sideBar-Nav mt-3">
-            <li >
-              <a aria-current="page" href="#">Home</a>
-            </li>
-            <li >
-              <a  href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a  href="#">Services</a>
-            </li>
-           
-            <li >
-              <a >Portfolio</a>
-            </li>
-            <li >
-              <a href="#">Blogs</a>
-            </li>
-  
-            <li>
-             <confia-button [content]="'GET A FREE QUOTE'"  fontWeight="fw-400" padding="px-3 py-2" hoverClass="heroBtnHover" borderRadius="br-6px" type="link" url="#" ></confia-button>
-            </li>
-           
-          </ul>
-        </ng-template>
-     
-    </p-sidebar>
+                 
+                </ul>
+              
+              </div>
+            </div>
+          </nav>
+          <p-sidebar [(visible)]="visible"  [fullScreen]="true">
+            <ng-template pTemplate="headless">
+               <div class="d-flex justify-content-between w-100 align-items-center p-5">
+                <a class="navbar-brand" href="#"><img ngSrc="../../../assets/images/logo.png" alt="Logo" class="logo" width="200" height="51" loading="eager" fetchpriority="high" ></a>
+                <span (click)="hideSidebar()" class="text-dark-green me-3"><fa-icon [icon]="close" size="2x"></fa-icon></span>
+               </div>
+               <ul class="sideBar-Nav mt-3">
+                <ng-container *ngFor="let item of urls">
+                    <li *ngIf="item.type==='text'">
+                        <a class=" {{item.isActive?'active':''}}" aria-current="page" [href]="item.route">{{item.label}}</a>
+                      </li>
+                      <li class="" *ngIf="item.type==='button'">
+                        <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.route" ></confia-button>
+                     </li>
+                </ng-container>
+            
+               
+              </ul>
+            </ng-template>
+         
+        </p-sidebar>
+    </div>
 </div>

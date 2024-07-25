@@ -1,0 +1,36 @@
+
+@import "../../../../node_modules/bootstrap/scss/functions";
+@import "../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../node_modules/bootstrap/scss/mixins";
+@import '../../utils/colors/color.scss';
+.service-row{
+    row-gap: 50px;
+    .card{
+        -webkit-box-shadow: 10px 10px 39px -6px rgba(0,0,0,0.20);
+-moz-box-shadow: 10px 10px 39px -6px rgba(0,0,0,0.20);
+box-shadow: 10px 10px 39px -6px rgba(0,0,0,0.20);
+        border-radius: 12px !important;
+        border: 1px solid $light;
+        &:hover{
+            
+            border: 1px solid $confia-dark-green;
+
+        }
+    }
+}
+.serviceType{
+    &:first-child{
+        border-top-left-radius: 12px !important;
+        border-bottom-left-radius: 12px !important;
+        @include media-breakpoint-down(md){
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+    }
+    &:last-child{
+        @include media-breakpoint-down(md){
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+        }
+    }
+}

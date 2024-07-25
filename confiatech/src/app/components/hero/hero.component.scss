@@ -19,6 +19,38 @@
     }
 }
 
+.underline-anim{
+    a{    color: $dark;
+        background: 
+    linear-gradient(to right, $confia-dark-green, $confia-dark-green),
+    linear-gradient(to right, $confia-dark-green-o ,$confia-aqua, $confia-dark-green);
+  background-size: 100% 0.2em, 0 0.2em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+        text-decoration: none;
+    
+        // text-decoration-thickness: 4px;
+        // text-decoration-color: $confia-dark-green;
+        // text-decoration-style:dotted;
+        // text-decoration-skip-ink:3px;
+        animation: underline 2s infinite;
+    }
+  
+}
+@keyframes underline {
+    0% {
+        background-size: 100% 0.2em, 0 0.2em;
+       
+    }
+    50% {
+        background-size: 0 0.2em, 100% 0.2em;
+
+    }
+    100% {
+        background-size: 100% 0.2em, 0 0.2em;
+    }
+  }
 @keyframes zoom {
     0% {
         transform: scale(1);
@@ -32,14 +64,14 @@
   }
 }
 .tool_icons{
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     column-gap: 10px;
     row-gap: 30px;
   div{
     margin-right: 15px;
         border:1px solid $confia-light;
   
-        @for $i from 1 through 6 {
+        @for $i from 1 through 7 {
             &:nth-child(#{$i}){
                 animation: zoom ( $i * 1.25s) infinite;
             }
