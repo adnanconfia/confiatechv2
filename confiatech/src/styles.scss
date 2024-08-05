@@ -71,20 +71,21 @@ p{
 }
 .heroBtnHover{
     &:hover{
-        background-color: $light;
-        border: 1px solid $confia-dark-green;
-        color: $confia-dark-green;
+        background-color: $light !important;
+        border: 1px solid $confia-dark-green !important;
+        color: $confia-dark-green !important;
     }   
 }
 
 .border-dark-green{
-    border-color: $confia-dark-green;
+    border-color: $confia-dark-green !important;
 }
 .whiteBtnHover{
+    transition: ease-out 0.4s;
  &:hover{
     background-color: transparent !important;
-    border: 1px solid $light;
-    color: $light;
+    border: 1px solid $light !important;
+    color: $light !important;
  }
 }
 
@@ -125,7 +126,10 @@ p{
     font-size: clamp(0.875rem, 0.8246rem + 0.2521vw, 1.25rem) !important;
 }
 .fs-hero-h1{
-    font-size: clamp(1.625rem, 1.3393rem + 1.4286vw, 3.75rem) !important;
+    font-size: clamp(0.875rem, 0.25rem + 3.125vw, 3.0625rem) !important;
+}
+.fs-hero-subheading{
+    font-size: clamp(0.75rem, 0.4821rem + 1.3393vw, 1.6875rem);
 }
 h1 {
     font-size: clamp(1.625rem, 1.3813rem + 1.2185vw, 3.4375rem) !important;
@@ -156,25 +160,28 @@ h1 {
   }
 //colors
 .bg-dark-green{
-    background-color: $confia-dark-green;
+    background-color: $confia-dark-green !important;
+}
+.bg-overlay{
+  background-color: $dark-o;
 }
 .bg-light{
-    background-color: $light;
+    background-color: $light !important;
 }
 .bg-dark-green-o{
-    background-color: $confia-dark-green-o;
+    background-color: $confia-dark-green-o !important;
 }
 .text-dark-green{
-    color:$confia-dark-green
+    color:$confia-dark-green !important;
 }
 .text-aqua{
-    color:$confia-aqua
+    color:$confia-aqua !important;
 }
 .text-confia-light{
-    color:$confia-light
+    color:$confia-light !important;
 }
 .text-light{
-    color:$light
+    color:$light !important;
 }
 
 //widht-height
