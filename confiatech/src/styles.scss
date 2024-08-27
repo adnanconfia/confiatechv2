@@ -159,17 +159,27 @@ h1 {
     font-size: 13px !important;
   }
 //colors
+.bg-gradient-green{
+  background-image: linear-gradient(180deg,$confia-aqua 15%,$confia-dark-green 80%);
+}
 .bg-dark-green{
     background-color: $confia-dark-green !important;
 }
 .bg-overlay{
   background-color: $dark-o;
 }
+
 .bg-light{
     background-color: $light !important;
 }
+.bg-aqua{
+    background-color: $confia-aqua !important;
+}
 .bg-dark-green-o{
     background-color: $confia-dark-green-o !important;
+}
+.bg-dark-green-50{
+    background-color: $confia-dark-green-50 !important;
 }
 .text-dark-green{
     color:$confia-dark-green !important;
@@ -204,4 +214,25 @@ h1 {
 
   .logo{
     max-width: 200px;
+  }
+
+
+  app-phases{
+    .p-timeline-event-opposite {
+      display: none !important;
+  }
+  .p-timeline-event-marker{
+    border-color: $confia-dark-green;
+  }.p-stepper .p-stepper-header .p-stepper-action{
+    background-color: transparent !important;
+  }
+  .p-timeline-event-connector{
+    background-color: $confia-aqua;
+  }
+  .p-stepper-separator{
+    background-color: $confia-aqua;
+  }
+  .p-stepper.p-stepper-vertical .p-stepper-toggleable-content {
+    background-color: transparent !important;
+  }
   }

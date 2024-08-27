@@ -85,7 +85,7 @@ export class PortfolioCompComponent {
           this.currentSlide = s.track.details.rel
         },
     }, [
-      (slider) => {
+    (slider) => {
         let timeout: string | number | NodeJS.Timeout | undefined
         let mouseOver = false
         function clearNextTimeout() {

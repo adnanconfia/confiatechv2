@@ -27,10 +27,10 @@ export class ConfiaButtonComponent {
 @Input() icon: any;
 @Input() hoverClass:string='';
 @Input() iconPosition: iconPosition = 'right';
-@Output() kazaroo_btn_click: EventEmitter<any> = new EventEmitter();
+@Output() confia_btn_click: EventEmitter<any> = new EventEmitter();
 @Input() isCenter:boolean=false;
 clickEvent() {
-  this.kazaroo_btn_click.emit();
+  this.confia_btn_click.emit();
 }
 }
 export type bgColor =  'bg-white' | 'bg-dark-green' |  'bg-light' | 'bg-ultra-light'| 'bg-danger';

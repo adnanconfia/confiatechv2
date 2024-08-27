@@ -1,0 +1,55 @@
+<div class="w-100 bg-dark-green-o">
+    <div class="container  py-5 ">
+        <div class="row py-5">
+            <div class="col-12">
+               <!-- <div class="d-flex flex-column justify-content-center h-100 align-items-center"> -->
+                <div class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between">
+                    <h1 class="fw-bold text-dark-green">
+                        Website Development Journey
+                    </h1>
+                    <confia-button [content]="'Get a quote'" hoverClass="heroBtnHover" type="link" URL="#"></confia-button>
+                </div>
+               <!-- </div> -->
+            </div>
+            <div class="col-12">
+             
+       <div class="py-5">
+        
+        <p-stepper [(activeStep)]="active"  orientation="vertical">
+            <p-stepperPanel *ngFor="let item of phases">
+                <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
+                    <!-- <button class="d-flex align-items-center text-white btn "   [ngClass]="{
+                        'bg-aqua': index == active,
+                        'bg-dark-green': index != active,
+                        
+                    }" (click)="onClick.emit()"> -->
+                      
+                      <h5 (click)="onClick.emit()" class="fw-bold bg-transparent"  [ngClass]="{
+                        'text-aqua': index == active}"> 0{{index + 1}}-{{item.heading}}</h5>
+                       
+                    <!-- </button> -->
+                </ng-template>
+                <ng-template pTemplate="content" let-nextCallback="nextCallback"  let-index="index">
+                    <div [innerHTML]=" item.text" class="bg-transparent"></div>
+                  <div class="text-end" >
+                  
+                    <confia-button [content]="'Back'" class="me-2"  *ngIf="index>0" (click)="active=active-1" ></confia-button>
+                    <confia-button [content]="'Next'" *ngIf="index<phases.length-1" (click)="active=active+1"></confia-button>
+                  </div>
+                </ng-template>
+            </p-stepperPanel>
+        <!-- <p-timeline [value]="phases" >
+           
+            <ng-template pTemplate="content" let-phase>
+                <h5 class="fw-bold">{{phase.heading}}</h5>
+            <div [innerHTML]=" phase.text"></div>
+            
+            </ng-template>
+        </p-timeline> -->
+     </p-stepper>
+  
+       </div>
+            </div>
+        </div>
+    </div>
+</div>
