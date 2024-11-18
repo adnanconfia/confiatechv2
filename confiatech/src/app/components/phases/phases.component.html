@@ -12,44 +12,178 @@
                <!-- </div> -->
             </div>
             <div class="col-12">
-             
-       <div class="py-5">
-        
-        <p-stepper [(activeStep)]="active"  orientation="vertical">
-            <p-stepperPanel *ngFor="let item of phases">
-                <ng-template pTemplate="header" let-onClick="onClick" let-index="index">
-                    <!-- <button class="d-flex align-items-center text-white btn "   [ngClass]="{
-                        'bg-aqua': index == active,
-                        'bg-dark-green': index != active,
-                        
-                    }" (click)="onClick.emit()"> -->
+                <div class=" tw-h-full tw-relative  ">
+                    <div id="container"
+                      class="tw-relative tw-text-gray-700 tw-antialiased  tw-overflow-hidden tw-text-sm tw-w-full tw-pt-6  md:tw-p-10 tw-px-5 sm:tw-px-10">
                       
-                      <h5 (click)="onClick.emit()" class="fw-bold bg-transparent"  [ngClass]="{
-                        'text-aqua': index == active}"> 0{{index + 1}}-{{item.heading}}</h5>
-                       
-                    <!-- </button> -->
-                </ng-template>
-                <ng-template pTemplate="content" let-nextCallback="nextCallback"  let-index="index">
-                    <div [innerHTML]=" item.text" class="bg-transparent"></div>
-                  <div class="text-end" >
+                
+                      <div #absoluteElement
+                        class=" sm:tw-block tw-w-1 tw-bg-confia-dark-green/10 -tw-z-10 tw-ml-8 sm:tw-ml-0 tw-absolute tw-h-full tw-left-0 sm:tw-left-1/2 tw-transform sm:tw--translate-x-1/2">
+                      </div>
+                
+                
+                  <ng-container *ngFor="let item of phases;let i=index">
+                
+                    <ng-container  *ngIf="i%2==0;else odd ">
                   
-                    <confia-button [content]="'Back'" class="me-2"  *ngIf="index>0" (click)="active=active-1" ></confia-button>
-                    <confia-button [content]="'Next'" *ngIf="index<phases.length-1" (click)="active=active+1"></confia-button>
-                  </div>
-                </ng-template>
-            </p-stepperPanel>
-        <!-- <p-timeline [value]="phases" >
-           
-            <ng-template pTemplate="content" let-phase>
-                <h5 class="fw-bold">{{phase.heading}}</h5>
-            <div [innerHTML]=" phase.text"></div>
-            
-            </ng-template>
-        </p-timeline> -->
-     </p-stepper>
-  
-       </div>
+                        <div class="tw-mt-6 sm:tw-mt-0 sm:tw-mb-12 tw-relative   "  *ngIf="i==0" #firstElement>
+                            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center">
+                                <div class="tw-flex sm:tw-justify-start tw-justify-end tw-w-full tw-mx-auto tw-items-center">
+                                  <div class="tw-w-full sm:tw-w-1/2 sm:tw-pr-8 tw-pl-8 ">
+                                    <div>
+                                      <p
+                                        class="xl:tw-text-lg md:tw-text-sm sm:tw-text-base xs:tw-text-sm tw-text-[12px]  tw-bg-confia-dark-green tw-bg-clip-text tw-text-transparent  tw-mb-5 
+                                        tw-font-bold tw-leading-7 tw-text-start sm:tw-text-end">
+                                       {{item.heading}}
+                                      </p>
+                                      <p
+                                      [innerHTML]="item.text"
+                                        class="xl:tw-text-lg md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark tw-mb-5 tw-font-normal tw-leading-7 tw-text-start sm:tw-text-end">
+                                     
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tw-absolute tw-left-0 sm:tw-left-1/2 tw-top-0 sm:tw-translate-y-0 tw-transform sm:tw--translate-x-1/2 tw-flex tw-items-center tw-justify-center">
+                                  <div class=" tw-rounded-full tw-flex tw-items-center tw-justify-center tw-relative  tw-border-4 tw-border-solid tw-border-confia-dark-green  before:tw-content-[''] 
+                                   tw-overflow-hidden before:tw-w-[80%] tw-w-6 tw-h-6 before:tw-h-[80%] before:tw-absolute  before:tw-bg-white before:tw-mx-auto 
+                                  before:tw-rounded-full
+                               "></div>
+                                </div>
+                              </div> 
+                            
+                            </div>
+                        <div class="tw-mt-6 sm:tw-mt-0 sm:tw-mb-12 tw-relative   "  *ngIf="i>0 && i<phases.length-1" >
+                            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center">
+                              <div class="tw-flex sm:tw-justify-start tw-justify-end tw-w-full tw-mx-auto tw-items-center">
+                                <div class="tw-w-full sm:tw-w-1/2 sm:tw-pr-8 tw-pl-8 ">
+                                    <div>
+                                        <p
+                                          class="xl:tw-text-lg md:tw-text-sm sm:tw-text-base xs:tw-text-sm tw-text-[12px]  tw-bg-confia-dark-green tw-bg-clip-text tw-text-transparent  tw-mb-5 
+                                          tw-font-bold tw-leading-7 tw-text-start sm:tw-text-end">
+                                         {{item.heading}}
+                                        </p>
+                                        <p
+                                        [innerHTML]="item.text"
+                                          class="xl:tw-text-lg md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark tw-mb-5 tw-font-normal tw-leading-7 tw-text-start sm:tw-text-end">
+                                       
+                                        </p>
+                                      </div>
+                                </div>
+                              </div>
+                              <div
+                                class="tw-absolute tw-left-0 sm:tw-left-1/2 tw-top-0 sm:tw-translate-y-0 tw-transform sm:tw--translate-x-1/2 tw-flex tw-items-center tw-justify-center">
+                                <div class=" tw-rounded-full tw-flex tw-items-center tw-justify-center tw-relative  tw-border-4 tw-border-solid tw-border-confia-dark-green  before:tw-content-[''] 
+                                 tw-overflow-hidden before:tw-w-[80%] tw-w-6 tw-h-6 before:tw-h-[80%] before:tw-absolute  before:tw-bg-white before:tw-mx-auto 
+                                before:tw-rounded-full
+                             "></div>
+                              </div>
+                            </div> 
+                          
+                          </div>
+                          <div class="tw-mt-6 sm:tw-mt-0 sm:tw-mb-12 tw-relative   "  *ngIf="i==phases.length-1" #lastElement>
+                            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center">
+                                <div class="tw-flex sm:tw-justify-start tw-justify-end tw-w-full tw-mx-auto tw-items-center">
+                                  <div class="tw-w-full sm:tw-w-1/2 sm:tw-pr-8 tw-pl-8 ">
+                                    <div>
+                                        <p
+                                          class="xl:tw-text-lg md:tw-text-sm sm:tw-text-base xs:tw-text-sm tw-text-[12px]  tw-bg-confia-dark-green tw-bg-clip-text tw-text-transparent  tw-mb-5 
+                                          tw-font-bold tw-leading-7 tw-text-start sm:tw-text-end">
+                                         {{item.heading}}
+                                        </p>
+                                        <p
+                                        [innerHTML]="item.text"
+                                          class="xl:tw-text-lg md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark tw-mb-5 tw-font-normal tw-leading-7 tw-text-start sm:tw-text-end">
+                                       
+                                        </p>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="tw-absolute tw-left-0 sm:tw-left-1/2 tw-top-0 sm:tw-translate-y-0 tw-transform sm:tw--translate-x-1/2 tw-flex tw-items-center tw-justify-center">
+                                  <div class=" tw-rounded-full tw-flex tw-items-center tw-justify-center tw-relative  tw-border-4 tw-border-solid tw-border-confia-dark-green  before:tw-content-[''] 
+                                   tw-overflow-hidden before:tw-w-[80%] tw-w-6 tw-h-6 before:tw-h-[80%] before:tw-absolute  before:tw-bg-white before:tw-mx-auto 
+                                  before:tw-rounded-full
+                               "></div>
+                                </div>
+                              </div> 
+                            
+                            </div>
+                    </ng-container>
+                  
+                    <ng-template #odd>
+                   
+                        <div class="tw-mt-6 sm:tw-mt-0 sm:tw-mb-12 tw-relative  " *ngIf="i==phases.length-1" #lastElement >
+                            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center ">
+                                <div class="tw-flex tw-justify-end tw-w-full tw-mx-auto tw-items-center">
+                                  <div class="tw-w-full sm:tw-w-1/2 tw-pl-8">
+                                    <div>
+                                        <p
+                                          class="xl:tw-text-lg md:tw-text-sm sm:tw-text-base xs:tw-text-sm tw-text-[12px]  tw-bg-confia-dark-green tw-bg-clip-text tw-text-transparent  tw-mb-5 
+                                          tw-font-bold tw-leading-7 tw-text-start sm:tw-text-start">
+                                         {{item.heading}}
+                                        </p>
+                                        <p
+                                        [innerHTML]="item.text"
+                                          class="xl:tw-text-lg md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]
+                                            tw-text-dark tw-mb-5 tw-font-normal tw-leading-7 tw-text-start sm:tw-text-start">
+                                       
+                                        </p>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div
+                                class="tw-absolute tw-left-0 sm:tw-left-1/2 tw-top-0 sm:tw-translate-y-0 tw-transform sm:tw--translate-x-1/2 tw-flex tw-items-center tw-justify-center">
+                                <div class=" tw-rounded-full tw-flex tw-items-center tw-justify-center tw-relative  tw-border-4 tw-border-solid tw-border-confia-dark-green  before:tw-content-[''] 
+                                 tw-overflow-hidden before:tw-w-[80%] tw-w-6 tw-h-6 before:tw-h-[80%] before:tw-absolute  before:tw-bg-white before:tw-mx-auto 
+                                before:tw-rounded-full
+                             "></div>
+                              </div>
+                            </div>
+                           
+                        </div>
+                        <div class="tw-mt-6 sm:tw-mt-0 sm:tw-mb-12 tw-relative  " *ngIf="i<phases.length-1" >
+                            <div class="tw-flex tw-flex-col sm:tw-flex-row tw-items-center ">
+                              <div class="tw-flex tw-justify-end tw-w-full tw-mx-auto tw-items-center">
+                                <div class="tw-w-full sm:tw-w-1/2 tw-pl-8">
+                                    <div>
+                                        <p
+                                          class="xl:tw-text-lg md:tw-text-sm sm:tw-text-base xs:tw-text-sm tw-text-[12px]  tw-bg-confia-dark-green tw-bg-clip-text tw-text-transparent  tw-mb-5 
+                                          tw-font-bold tw-leading-7 tw-text-start sm:tw-text-start">
+                                         {{item.heading}}
+                                        </p>
+                                        <p
+                                        [innerHTML]="item.text"
+                                          class="xl:tw-text-lg md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px] 
+                                           tw-text-dark tw-mb-5 tw-font-normal tw-leading-7 tw-text-start sm:tw-text-start">
+                                       
+                                        </p>
+                                      </div>
+                                </div>
+                              </div>
+                              <div
+                              class="tw-absolute tw-left-0 sm:tw-left-1/2 tw-top-0 sm:tw-translate-y-0 tw-transform sm:tw--translate-x-1/2 tw-flex tw-items-center tw-justify-center">
+                              <div class=" tw-rounded-full tw-flex tw-items-center tw-justify-center tw-relative  tw-border-4 tw-border-solid tw-border-confia-dark-green  before:tw-content-[''] 
+                               tw-overflow-hidden before:tw-w-[80%] tw-w-6 tw-h-6 before:tw-h-[80%] before:tw-absolute  before:tw-bg-white before:tw-mx-auto 
+                              before:tw-rounded-full
+                           "></div>
+                            </div>
+                          </div>
+                         
+                      </div>
+                    </ng-template>
+                    
+                
+                  </ng-container>
+                  
+                
+                 </div>
+                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+

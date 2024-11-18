@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { TimelineModule } from 'primeng/timeline';
 import { StepperModule } from 'primeng/stepper';
@@ -16,6 +16,10 @@ interface phaseItem {
   styleUrl: './phases.component.scss'
 })
 export class PhasesComponent {
+  
+  @ViewChild('firstElement') firstElement!: ElementRef;
+  @ViewChild('lastElement') lastElement!: ElementRef;
+  @ViewChild('absoluteElement') absoluteElement!: ElementRef;
   phases: phaseItem[];
   isBrowser:boolean;
   active:number=0
@@ -23,12 +27,36 @@ export class PhasesComponent {
     this.isBrowser = isPlatformBrowser(platformId);
     this.phases=[]
 }
+
+calculateHeight(){
+  // Get the top position of the first element
+  const firstElementTop = this.firstElement.nativeElement.getBoundingClientRect().top + window.scrollY;
+
+  // Get the top position of the last element
+  const lastElementTop = this.lastElement.nativeElement.getBoundingClientRect().top + window.scrollY;
+
+  // Calculate the total height from the first element to the top of the last element
+  const totalHeight = lastElementTop - firstElementTop;
+
+  // Set the absolute element's top position and height dynamically
+  const absoluteElement = this.absoluteElement.nativeElement;
+
+  absoluteElement.style.setProperty('height', `${totalHeight}px`, 'important');
+}
+ngAfterViewInit():  void {
+  if(this.isBrowser){
+
+   this.calculateHeight()
+  
+  }
+  
+}
 ngOnInit(): void {
   if(this.isBrowser)
 {  this.phases = [
     {
       heading:"Discovery and Planning",
-      text:"<ul>\
+      text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Client Consultation:</b> Meet with the client to understand their goals, target audience, key features, and any specific requirements.\
       </li>\
@@ -45,7 +73,7 @@ ngOnInit(): void {
     },
     {
       heading:"Design",
-      text:"<ul>\
+    text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Wireframing:</b> Create low-fidelity wireframes to outline the basic structure and layout of the website’s pages\
       </li>\
@@ -59,7 +87,7 @@ ngOnInit(): void {
     },
     {
       heading:"Content Creation",
-      text:"<ul>\
+   text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Content Strategy:</b> Develop a content strategy that aligns with the website’s goals and target audience.\
       </li>\
@@ -73,7 +101,7 @@ ngOnInit(): void {
     },
     {
       heading:"Development",
-      text:"<ul>\
+    text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Front-End Development:</b> Convert the design into a functional website using HTML, CSS, JavaScript, and other front-end technologies. Ensure the site is responsive and works on all devices.\
       </li>\
@@ -87,7 +115,7 @@ ngOnInit(): void {
     },
     {
       heading:"Testing",
-      text:"<ul>\
+    text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Functional Testing:</b> Ensure all website features and functionalities work as intended, including forms, links, and interactive elements.\
       </li>\
@@ -107,7 +135,7 @@ ngOnInit(): void {
     },
     {
       heading:"Launch",
-      text:"<ul>\
+   text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Pre-Launch Checks:</b> Double-check all aspects of the website, including SEO settings, analytics integration, and content accuracy.\
       </li>\
@@ -121,7 +149,7 @@ ngOnInit(): void {
     },
     {
       heading:"Maintenance and Updates",
-      text:"<ul>\
+   text:"<ul class=' md:tw-text-sm tw-list-none sm:tw-text-base xs:tw-text-xs tw-text-[12px]  tw-text-dark'>\
       <li>\
       <b>Regular Maintenance:</b> Provide ongoing support to keep the website updated with the latest security patches, software updates, and content changes.\
       </li>\
@@ -137,6 +165,13 @@ ngOnInit(): void {
       </ul"
     }
   ];
+
+  var self=this;
+  window.addEventListener('resize', function() {
+
+      self.calculateHeight()
+    
+});
   }
 }
 }

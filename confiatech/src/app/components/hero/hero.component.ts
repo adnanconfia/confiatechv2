@@ -25,6 +25,7 @@ export class HeroComponent {
    ngAfterViewInit() {
     if(this.isBrowser)
     {
+      
               var _origin: any = "center"
               var self=this;
       this.slider = new KeenSlider(this.sliderRef.nativeElement,  {

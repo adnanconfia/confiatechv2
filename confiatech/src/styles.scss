@@ -1,5 +1,7 @@
 
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import '../src/app/utils/colors/color.scss';
 @import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
@@ -7,6 +9,7 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+
 html{
     scroll-behavior: smooth;
     margin: 0 !important;
@@ -17,6 +20,7 @@ body{
     font-family: "Inter",sans-serif !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow-x: hidden;
 }
 p{
     font-size: 15px;

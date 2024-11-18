@@ -9,12 +9,14 @@
               <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <ng-container *ngFor="let item of urls">
+                   
                         <li class="nav-item" *ngIf="item.type==='text'">
-                            <a class="nav-link " aria-current="page" [routerLinkActive]="'active'" [routerLink]="item.route">{{item.label}}</a>
+                            <a class="nav-link " aria-current="page" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.url">{{item.label}}</a>
                           </li>
                           <li class="nav-item" *ngIf="item.type==='button'">
-                            <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.route" ></confia-button>
-                         </li>
+                            <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.url" fragment="contact" ></confia-button>
+
+                          </li>
                     </ng-container>
                     
                  
@@ -34,11 +36,12 @@
                <ul class="sideBar-Nav mt-3">
                 <ng-container *ngFor="let item of urls">
                     <li *ngIf="item.type==='text'">
-                        <a class=" {{item.isActive?'active':''}}" aria-current="page" [href]="item.route">{{item.label}}</a>
-                      </li>
+                      <a class="nav-link " aria-current="page" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.url">{{item.label}}</a>
+                    </li>
                       <li class="" *ngIf="item.type==='button'">
-                        <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.route" ></confia-button>
-                     </li>
+                        <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.url" fragment="contact" ></confia-button>
+
+                      </li>
                 </ng-container>
             
                

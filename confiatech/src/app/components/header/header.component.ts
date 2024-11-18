@@ -5,6 +5,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {  faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ConfiaButtonComponent } from "../../utils/confia-button/confia-button.component";
 import { RouterModule } from '@angular/router';
+import { Iroute } from '../../utils/types/Iroutes.interface';
+import { routes } from '../../utils/helpers/routes';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -15,44 +17,7 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
  visible:boolean=false;
  close=faTimes
- urls=[
-  {
-    label:"Home",
-    route:"/home",
-    isActive:true,
-    type:"text"
-  },
-  {
-    label:"About",
-    route:"#",
-    isActive:false,
-     type:"text"
-  },
-  {
-    label:"Services",
-    route:"/services",
-    isActive:false,
-     type:"text"
-  },
-  {
-    label:"Portfolio",
-    route:"#",
-    isActive:false,
-     type:"text"
-  },
-  {
-    label:"Blogs",
-    route:"#",
-    isActive:false,
-     type:"text"
-  },
-  {
-    label:"GET A FREE QUOTE",
-    route:"#",
-    isActive:false,
-     type:"button"
-  }
- ]
+ urls:Iroute[]=routes;
  showSidebar(){
   this.visible=true;
  }
