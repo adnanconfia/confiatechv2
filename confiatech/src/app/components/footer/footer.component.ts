@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn, faXTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { routes } from '../../utils/helpers/routes';
+import { Iroute } from '../../utils/types/Iroutes.interface';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule,CommonModule,RouterModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
@@ -19,4 +23,5 @@ export class FooterComponent {
   linkedin = faLinkedinIn;
   x = faXTwitter;
   date = new Date();
+  urls:Iroute[]=routes;
 }

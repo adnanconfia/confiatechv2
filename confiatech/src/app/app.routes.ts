@@ -6,5 +6,10 @@ export const routes: Routes = [
     {path: 'services', loadComponent: () => import('./pages/service-page/service-page.component').then(mod => mod.ServicePageComponent)},
     {path: 'services/fe-development', loadComponent: () => import('./pages/service-page/fe-development/fe-development.component').then(mod => mod.FEDevelopmentComponent)},
     {path: 'services/be-development', loadComponent: () => import('./pages/service-page/be-development/be-development.component').then(mod => mod.BeDevelopmentComponent)},
+    {path: 'services/mobile-app-development', loadComponent: () => import('./pages/service-page/mobile-development/mobile-development.component').then(mod => mod.MobileDevelopmentComponent)},
+    {path: 'services/ui-ux-designing', loadComponent: () => import('./pages/service-page/ui-designing/ui-designing.component').then(mod => mod.UiDesigningComponent)},
+    {path: 'services/graphic-designing', loadComponent: () => import('./pages/service-page/graphics/graphics.component').then(mod => mod.GraphicsComponent)},
+    {path: 'services/devops', loadComponent: () => import('./pages/service-page/devops/devops.component').then(mod => mod.DevopsComponent)},
+
 
 ];

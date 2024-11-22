@@ -1,6 +1,7 @@
-<div class="w-100 header-shadow sticky-top bg-white">
+
+  <div class="w-100 tw-backdrop-blur-lg  header-shadow tw-min-h-20  tw-z-50 tw-bg-white/70  tw-fixed ">
     <div class="container-lg ">
-        <nav class="navbar navbar-expand-lg ">
+        <nav class="navbar navbar-expand-lg bg-transparent ">
             <div class="container-fluid">
               <a class="navbar-brand" href="#"><img ngSrc="../../../assets/images/logo.png" alt="Logo" class="logo" width="200" height="51" loading="eager" fetchpriority="high" ></a>
               <span class="navbar-toggler border-0 cursor-pointer" type="button" (click)="showSidebar()">
@@ -11,7 +12,7 @@
                     <ng-container *ngFor="let item of urls">
                    
                         <li class="nav-item" *ngIf="item.type==='text'">
-                            <a class="nav-link " aria-current="page" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" [routerLink]="item.url">{{item.label}}</a>
+                            <a class="nav-link " aria-current="page" [fragment]="item.fragment" [routerLinkActive]="'active'" [routerLinkActiveOptions]="options" [routerLink]="item.url">{{item.label}}</a>
                           </li>
                           <li class="nav-item" *ngIf="item.type==='button'">
                             <confia-button [content]="item.label" fontSize="fs-14px" padding="px-3 py-2"  fontWeight="fw-400"  hoverClass="heroBtnHover " borderRadius="br-6px" type="link" [URL]="item.url" fragment="contact" ></confia-button>
@@ -51,3 +52,4 @@
         </p-sidebar>
     </div>
 </div>
+

@@ -6,13 +6,12 @@ import { PortfolioCompComponent } from "../../components/portfolio-comp/portfoli
 import { PhasesComponent } from "../../components/phases/phases.component";
 import { AboutComponent } from "../../components/about/about.component";
 import { ContactComponent } from "../../components/contact/contact.component";
-import { FooterComponent } from "../../components/footer/footer.component";
 import { BlogsComponent } from "../../components/blogs/blogs.component";
 
 @Component({
   selector: 'app-landing',
   standalone: true,
-  imports: [HeroComponent, ServicesComponent, ClientCompComponent, PortfolioCompComponent, PhasesComponent, AboutComponent, ContactComponent, FooterComponent, BlogsComponent],
+  imports: [HeroComponent, ServicesComponent, ClientCompComponent, PortfolioCompComponent, PhasesComponent, AboutComponent, ContactComponent, BlogsComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss'
 })

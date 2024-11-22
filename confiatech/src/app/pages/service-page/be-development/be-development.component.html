@@ -1,29 +1,45 @@
-<div class="w-100">
+<div class="w-100 tw-relative tw-pt-16">
+    <!-- <div class="col-12 tw-py-60 tw-bg-white tw-overflow-hidden d-flex tw-relative tw-z-10 flex-column align-items-center justify-content-center" >
+        <div class="tw-w-full tw-h-full tw-absolute tw-left-0  tw-top-0 ">
+            <video src="../../../../assets/services/be-dev.mp4" autoplay [controls]="false" loop muted
+            class="tw-w-full"></video>
+        </div>
+        <div class="position-absolute top-0 py-5 w-100 h-100 d-flex align-items-center start-0  tw-backdrop-blur-md tw-bg-dark/30">
 
-    <div class="container tw-mt-3 ">
+            <div class="tw-flex tw-flex-col tw-justify-center tw-items-center  tw-w-full">
+              <div class="mx-auto">
+                <h1 class="tw-font-bold tw-text-start tw-text-confia-dark-green tw-text-6xl">Backend</h1>
+                <h1 class="tw-font-bold tw-text-start tw-text-confia-dark-green tw-text-6xl">Development</h1>
+              </div>
+            </div>
+            </div>
+    </div> -->
+    <div class="container tw-pt-20 ">
 
         <div class="row pb-4 align-items-stretch ">
-            <div class="col-12 tw-py-52 tw-rounded-xl tw-bg-confia-dark-green tw-overflow-hidden d-flex tw-relative tw-z-10 flex-column align-items-center justify-content-center" >
-                <div class="tw-w-full tw-h-full tw-absolute tw-left-0  tw-top-0 backdrop-brightness-50">
-                    <video src="../../../../assets/services/be-dev.mp4" autoplay [controls]="false" loop muted
-                    class="tw-w-full"></video>
+          
+            <div class="col-12 col-md-6 tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <div class="tw-w-full">
+                    <h1 class="tw-font-bold tw-text-start tw-text-confia-dark-green tw-text-4xl">Backend</h1>
+                    <h1 class="tw-font-bold tw-text-start tw-text-confia-dark-green tw-text-4xl">Development</h1>
+                    <h3 class="tw-font-normal tw-text-confia-aqua tw-text-lg">
+                        Unleash Scalable Backend Power Today!
+                    </h3>
+                <div class="tw-mt-8">
+                    <confia-button content="Get Started" target="_parent" type="button" type="link"  URL="/" fragment="contact" backgroundColor="bg-dark-green"
+                    fontWeight="fw-400 mt-5 mt-md-0 " color="text-white" hoverClass="heroBtnHover"
+                    padding="p-2 px-5"></confia-button>
                 </div>
-                <div class="position-absolute top-0 py-5 w-100 h-100 d-flex align-items-center start-0 bg-dark-green-50">
-
-                    <div class="tw-flex tw-flex-col tw-justify-center tw-items-center tw-w-full">
-                      <div class="mx-auto">
-                        <h1 class="tw-font-bold tw-text-start tw-text-white tw-text-6xl">Back-End</h1>
-                        <h1 class="tw-font-bold tw-text-start tw-text-white tw-text-6xl">Development</h1>
-                      </div>
-                    </div>
-                    </div>
+                  </div>
             </div>
-
-            <div class="col-12 tw-mt-8 ">
-             <div class="row tw-items-stretch">
-               
-                <div class="col-12 col-md-5  tw-flex tw-flex-col tw-justify-center tw-items-center">
-                    <img ngSrc="../../../../assets/services/be_dev.png" alt="BE DEV" width="500" height="333" class="tw-max-w-full">
+            <div class="col-12 col-md-6  tw-flex tw-flex-col tw-justify-center tw-items-center">
+                <img ngSrc="../../../../assets/services/be_dev.png" alt="BE DEV" width="500" height="333" class="tw-max-w-full">
+            </div>
+            <div class="col-12 tw-mt-8  ">
+             <div class="row tw-mt-16">
+                <div class="col-12 col-md-5 tw-relative tw-text-end">
+                    <img ngSrc="../../../../assets/services/be_dev.jpg" width="482" height="321"   alt="BE Dev" class="tw-animate-updown tw-w-11/12 tw-object-fill tw-relative tw-rounded-xl tw-z-10">
+                    <div class="tw-animate-downUp  tw-w-11/12  tw-bg-confia-aqua/50 -tw-top-8 tw-left-0 tw-rounded-xl tw-h-80 tw-absolute tw-z-0"></div>
                 </div>
                 <div class="col-12 col-md-7 tw-h-full">
                     <p class="tw-text-base tw-font-normal">
@@ -36,10 +52,14 @@
            
                     </p>
                 </div>
+        
+            
              </div>
             </div>
             <div class="col-12 tw-mt-10">
                 <div class="row tw-items-stretch">
+      
+                
                     <div class="col-12 col-md-5 ">
                         <h1 class="tw-font-bold tw-text-3xl tw-text-confia-dark-green">Technology Stack</h1>
                         <ul class="tw-list-[square] marker:tw-text-confia-dark-green marker:tw-text-3xl">
@@ -59,9 +79,8 @@
                     </div>
                     <div class="col-12 col-md-7  tw-flex tw-flex-col tw-justify-center tw-items-center">
               
-                        <img src="../../../../assets/services/be_icons.png" alt="BE ICONS" idth="448" height="464" class="tw-max-w-full ">
+                        <img ngSrc="../../../../assets/services/be_icons.png" alt="BE ICONS" width="600" height="450" class="tw-max-w-full ">
                     </div>
-                  
                  </div>
                 
             </div>
@@ -75,5 +94,12 @@
        
                 </div>
                 </div>
+                <div class="tw-bg-confia-dark-green tw-mt-10 tw-py-16">
+                    <div class="container">
+                       <h1 class="tw-text-white  mx-0 px-0   fw-bold">
+                          More Services</h1>
+                       <app-service-slider serviceName="be"></app-service-slider>
+                    </div>
+                   </div>
                 </div>
                 

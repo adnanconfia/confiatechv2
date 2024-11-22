@@ -23,130 +23,130 @@ export class HeroComponent {
    }
 
    ngAfterViewInit() {
-    if(this.isBrowser)
-    {
+  //   if(this.isBrowser )
+  //   {
       
-              var _origin: any = "center"
-              var self=this;
-      this.slider = new KeenSlider(this.sliderRef.nativeElement,  {
-        loop: true,
-        mode:"free",
-        drag:false,
+  //             var _origin: any = "center"
+  //             var self=this;
+  //     this.slider = new KeenSlider(this.sliderRef.nativeElement,  {
+  //       loop: true,
+  //       mode:"free",
+  //       drag:false,
         
-        breakpoints: {
-          "(min-width: 570px)": {
-            slides: { perView: 2, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: _range * -1
-            //    },
-          },
-          "(min-width: 768px)": {
-            slides: { perView: 3, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //       breakpoints: {
+  //         "(min-width: 570px)": {
+  //           slides: { perView: 2, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: _range * -1
+  //           //    },
+  //         },
+  //         "(min-width: 768px)": {
+  //           slides: { perView: 3, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          },
-          "(min-width: 992px)": {
-            slides: { perView: 4, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //         },
+  //         "(min-width: 992px)": {
+  //           slides: { perView: 4, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          },
-          "(min-width: 1200px)": {
-            slides: { perView: 5, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //         },
+  //         "(min-width: 1200px)": {
+  //           slides: { perView: 5, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          }
-        },
-        //  range:{
-        //    min: _range,
-        //    max: maxRange
-        //  }
+  //         }
+  //       },
+  //       //  range:{
+  //       //    min: _range,
+  //       //    max: maxRange
+  //       //  }
 
-        slides: {
-          perView: 1,
-          origin: _origin,
-          spacing: 5,
+  //       slides: {
+  //         perView: 1,
+  //         origin: _origin,
+  //         spacing: 5,
 
-        },
-        created(s) {
-          s.moveToIdx(5, true, animation)
-        },
-        updated(s) {
-          s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
-        animationEnded(s) {
-          s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
-    },)
-      this.slider2 = new KeenSlider(this.sliderRef2.nativeElement,  {
-        loop: true,
-        mode:"free",
-        drag:false,
-        rtl:true,
-        breakpoints: {
-          "(min-width: 570px)": {
-            slides: { perView: 2, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: _range * -1
-            //    },
-          },
-          "(min-width: 768px)": {
-            slides: { perView: 3, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //       },
+  //       created(s) {
+  //         s.moveToIdx(5, true, animation)
+  //       },
+  //       updated(s) {
+  //         s.moveToIdx(s.track.details.abs + 5, true, animation)
+  //       },
+  //       animationEnded(s) {
+  //         s.moveToIdx(s.track.details.abs + 5, true, animation)
+  //       },
+  //   },)
+  //     this.slider2 = new KeenSlider(this.sliderRef2.nativeElement,  {
+  //       loop: true,
+  //       mode:"free",
+  //       drag:false,
+  //       rtl:true,
+  //       breakpoints: {
+  //         "(min-width: 570px)": {
+  //           slides: { perView: 2, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: _range * -1
+  //           //    },
+  //         },
+  //         "(min-width: 768px)": {
+  //           slides: { perView: 3, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          },
-          "(min-width: 992px)": {
-            slides: { perView: 4, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //         },
+  //         "(min-width: 992px)": {
+  //           slides: { perView: 4, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          },
-          "(min-width: 1200px)": {
-            slides: { perView: 5, origin: _origin, spacing: 5 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  //         },
+  //         "(min-width: 1200px)": {
+  //           slides: { perView: 5, origin: _origin, spacing: 5 },
+  //           //  range: {
+  //           //    min: _range,
+  //           //    max: maxRange
+  //           //  },
 
-          }
-        },
-        //  range:{
-        //    min: _range,
-        //    max: maxRange
-        //  }
+  //         }
+  //       },
+  //       //  range:{
+  //       //    min: _range,
+  //       //    max: maxRange
+  //       //  }
 
-        slides: {
-          perView: 1,
-          origin: _origin,
-          spacing: 5,
+  //       slides: {
+  //         perView: 1,
+  //         origin: _origin,
+  //         spacing: 5,
 
-        },
-        created(s) {
-          s.moveToIdx(5, true, animation)
-        },
-        updated(s) {
-          s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
-        animationEnded(s) {
-          s.moveToIdx(s.track.details.abs + 5, true, animation)
-        },
-    },)
-  }
+  //       },
+  //       created(s) {
+  //         s.moveToIdx(5, true, animation)
+  //       },
+  //       updated(s) {
+  //         s.moveToIdx(s.track.details.abs + 5, true, animation)
+  //       },
+  //       animationEnded(s) {
+  //         s.moveToIdx(s.track.details.abs + 5, true, animation)
+  //       },
+  //   },)
+  // }
     
   }
 

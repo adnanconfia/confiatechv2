@@ -5,6 +5,7 @@ export const routes:Iroute[]=[
         url:"/",
         type:'text',
         label:'Home',
+         fragment:'home'
     },   {
         url:"/about",
         type:'text',
@@ -14,11 +15,11 @@ export const routes:Iroute[]=[
         type:'text',
         label:'Services',
     },{
-        url:"/",
+        url:"/case-studies",
         type:'text',
         label:'Case Studies',
     },{
-        url:"/",
+        url:"/blogs",
         type:'text',
         label:'Blogs',
     },

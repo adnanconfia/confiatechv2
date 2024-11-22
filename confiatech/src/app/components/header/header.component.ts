@@ -4,7 +4,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {  faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ConfiaButtonComponent } from "../../utils/confia-button/confia-button.component";
-import { RouterModule } from '@angular/router';
+import { IsActiveMatchOptions, RouterModule } from '@angular/router';
 import { Iroute } from '../../utils/types/Iroutes.interface';
 import { routes } from '../../utils/helpers/routes';
 @Component({
@@ -18,6 +18,12 @@ export class HeaderComponent {
  visible:boolean=false;
  close=faTimes
  urls:Iroute[]=routes;
+ options:IsActiveMatchOptions={
+fragment:'exact',
+paths:'subset',
+matrixParams:'subset',
+queryParams:'subset'
+ }
  showSidebar(){
   this.visible=true;
  }

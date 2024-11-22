@@ -13,26 +13,16 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3 mt-5">
                 <h5>Quick links</h5>
-                <div class="mt-2">
-                    <a href="#" class="text-decoration-none text-light">
-                        Home
-                    </a>
-                </div>
-                <div class="mt-2">
-                    <a href="#" class="text-decoration-none text-light">
-                        About
-                    </a>
-                </div>
-                <div class="mt-2">
-                    <a href="#" class="text-decoration-none text-light">
-                        Services
-                    </a>
-                </div>
-                <div class="mt-2 w">
-                    <a href="#" class="text-decoration-none text-light">
-                        Blogs
-                    </a>
-                </div>
+                <ng-container *ngFor="let item of urls">
+                    <div class="mt-2" *ngIf="item.type==='text'">
+                        <a [routerLink]="item.url"  [fragment]="item.fragment"  class="text-decoration-none text-light" >
+                            {{item.label}}
+                        </a>
+                    </div>
+                </ng-container>
+                
+              
+        
             </div>
             <div class="col-12 col-md-6 col-lg-3 mt-5">
                 <h5>Contact</h5>

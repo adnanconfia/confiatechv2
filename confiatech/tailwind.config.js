@@ -6,7 +6,7 @@ module.exports = {
   prefix: "tw-",
   important: true,
   corePlugins: {
-      preflight: false,
+      preflight: true,
   },
   theme: {
  
@@ -19,6 +19,7 @@ module.exports = {
         'white':'#fff'
         
       },
+   
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         body:['"Inter"',"sans-serif"],
@@ -26,7 +27,25 @@ module.exports = {
         'sans': ['"Inter"',"sans-serif"]
       },
     extend: {
-
+      animation: {
+        updown: 'updown 2s ease-in-out infinite',
+        downUp: 'downUp 2s ease-in-out infinite',
+        imageScroll: 'imageScroll 15s ease-in-out infinite',
+      },
+      keyframes: {
+        updown: {
+          '0%, 100%': { transform: 'translatey(0)' },
+          '50%': { transform: 'translatey(-5%)' },
+        },
+        downUp: {
+          '0%, 100%': { transform: 'translatey(0)' },
+          '50%': { transform: 'translatey(5%)' },
+        },
+        imageScroll: {
+          '0%, 100%': { transform: 'translatey(0)' },
+          '50%': { transform: 'translatey(-55%)' },
+        }
+      },
     },
   },
   plugins: [
