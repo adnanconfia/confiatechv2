@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser, NgOptimizedImage } from "@angular/common";
-import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from "@angular/core"
+import { ChangeDetectorRef, Component, ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from "@angular/core"
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 
 const animation = { duration: 25000, easing: (t:any) => t }
@@ -18,7 +18,7 @@ export class ClientCompComponent implements OnInit{
 
   currentSlide: number = 1
   isPaused:boolean=false;
-  constructor( @Inject(PLATFORM_ID) platformId: Object) {
+  constructor( @Inject(PLATFORM_ID) platformId: Object,private cdr:ChangeDetectorRef) {
     this.isBrowser = isPlatformBrowser(platformId);
    }
   ngOnInit(): void {
@@ -112,7 +112,11 @@ export class ClientCompComponent implements OnInit{
         slider.on("animationEnded", nextTimeout)
         slider.on("updated", nextTimeout)
       },
-    ])}
+
+    ])
+    this.cdr.detectChanges();
+  }
+
   }
 
   ngOnDestroy() {

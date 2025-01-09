@@ -1,11 +1,13 @@
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
+import { ConfiaButtonComponent } from '../../utils/confia-button/confia-button.component';
+import { portfolio, PortfolioServiceService } from '../../services/portfolio-service.service';
 
 @Component({
   selector: 'app-portfolio-comp',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ConfiaButtonComponent,NgOptimizedImage],
   templateUrl: './portfolio-comp.component.html',
   styleUrl: './portfolio-comp.component.scss'
 })
@@ -15,18 +17,19 @@ export class PortfolioCompComponent {
   slider: KeenSliderInstance | undefined ;
   slider2: KeenSliderInstance | undefined ;
   isBrowser:boolean;
-
+  portfolio:portfolio[]=[];
   currentSlide: number = 1
   currentSlide2: number = 2
   isPaused:boolean=false;
-  constructor( @Inject(PLATFORM_ID) platformId: Object) {
+  constructor( @Inject(PLATFORM_ID) platformId: Object,private portfolioService:PortfolioServiceService) {
     this.isBrowser = isPlatformBrowser(platformId);
    }
   ngOnInit(): void {
-    if(this.isBrowser && this.sliderRef)
-      {
-      
-  }}
+      this.loadPortfolio()
+   }
+  loadPortfolio(){
+    this.portfolio = this.portfolioService.getPortfolio();
+  }
   ngAfterViewInit() {
     if(this.isBrowser)
     {

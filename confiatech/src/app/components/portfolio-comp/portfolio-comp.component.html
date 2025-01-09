@@ -1,7 +1,11 @@
-<div class="w-100  ">
-    <div class="w-100  ">
-
-        <!-- <div class="row pb-4">
+<div class="w-100">
+  <div class="w-100">
+    <div class="w-100">
+      <h1 class="text-dark-green mx-0 tw-text-center px-0 fw-bold">
+        Portfolio
+      </h1>
+    </div>
+    <!-- <div class="row pb-4">
         <div class="col-12">
             <div class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between">
                 <h1 class="text-dark-green mx-0 px-0   fw-bold">
@@ -11,42 +15,74 @@
             </div>
         </div>
         </div> -->
-        <!-- <div class="row w-100 portfolio">
+    <!-- <div class="row w-100 portfolio">
             <div class="col-12 col-lg-6 position-relative cursor-pointer d-flex align-items-center justify-content-center flex-column">
                 <div class="position-absolute overlay-div d-flex flex-column align-items-center justify-content-center text-white bg-overlay">
                     <h5 class="fw-700">Loom Centric</h5>
                 </div>
-                <img src="../../../assets/portfolio/loomCentric.png" class="w-100"> 
+                <img  width="634" height="423"   loading="lazy"
+          fetchpriority="low"
+          alt="Loom centric"
+           ngSrc="../../../assets/portfolio/loomCentric.jpg" class="w-100"> 
             </div>
             <div class="col-12 col-lg-6  position-relative cursor-pointer d-flex align-items-center justify-content-center flex-column ">
                 <div class="position-absolute overlay-div d-flex flex-column align-items-center justify-content-center text-white bg-overlay">
                     <h5 class="fw-700">Kazaroo</h5>
                 </div>
-                <img src="../../../assets/portfolio/kazaroo.png" class="w-100"> 
+                <img  width="634" height="423"   loading="lazy"
+          fetchpriority="low"
+          alt="Loom centric"
+           ngSrc="../../../assets/portfolio/kazaroo.jpg" class="w-100"> 
             </div>
             <div class="col-12 col-lg-6">
-                <img src="../../../assets/portfolio/visu.png" class="w-100"> 
+                <img  width="634" height="423"   loading="lazy"
+          fetchpriority="low"
+          alt="Loom centric"
+           ngSrc="../../../assets/portfolio/visu.jpg" class="w-100"> 
             </div>
             <div class="col-12 col-lg-6">
-                <img src="../../../assets/portfolio/axis.png" class="w-100"> 
+                <img  width="634" height="423"   loading="lazy"
+          fetchpriority="low"
+          alt="Loom centric"
+           ngSrc="../../../assets/portfolio/axis.jpg" class="w-100"> 
             </div>
         </div> -->
-        <div class="navigation-wrapper">
-        <div class="keen-slider mt-5" #sliderRef>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/loomCentric.png" class="w-100"> 
+    <div class="navigation-wrapper">
+      <div class="keen-slider mt-5" #sliderRef>
+        <ng-container *ngFor="let item of portfolio.reverse()">
+          <div class="keen-slider__slide number-slide1 tw-relative">
+            <div
+              class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
+            >
+              <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
+                {{ item.title }}
+              </h3>
+              <confia-button
+                [content]="'View Project '"
+                hoverClass="whiteBtnHover"
+                fontSize="fs-14px"
+                padding="px-3 py-2 mt-4"
+                fontWeight="fw-400"
+                color="text-dark-green"
+                backgroundColor="bg-light"
+                borderRadius="br-6px"
+                type="link"
+                [URL]="'/portfolio/details/' + item.id"
+              ></confia-button>
             </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/visu.png" class="w-100"> 
-            </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/kazaroo.png" class="w-100"> 
-            </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/axis.png" class="w-100"> 
-            </div>
-            </div>
-            <!-- <div class="arrow arrow--left ">
+            <img
+              width="634"
+              height="423"
+              loading="lazy"
+              fetchpriority="low"
+              [alt]="item.title"
+              [ngSrc]="item.image"
+              class="w-100"
+            />
+          </div>
+        </ng-container>
+      </div>
+      <!-- <div class="arrow arrow--left ">
                 <svg
                 [ngClass]="
                   ' arrow--left w-30px' + (currentSlide === 0 ? ' arrow--disabled' : '')
@@ -76,23 +112,43 @@
         <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
       </svg>
       </div> -->
-        </div>   
-        <div class="navigation-wrapper">
-        <div class="keen-slider mt-0" #sliderRef2>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/loomCentric.png" class="w-100"> 
+    </div>
+    <div class="navigation-wrapper">
+      <div class="keen-slider mt-0" #sliderRef2>
+        <ng-container *ngFor="let item of portfolio">
+          <div class="keen-slider__slide number-slide1 tw-relative">
+            <div
+              class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
+            >
+              <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
+                {{ item.title }}
+              </h3>
+              <confia-button
+                [content]="'View Project '"
+                hoverClass="whiteBtnHover"
+                fontSize="fs-14px"
+                padding="px-3 py-2 mt-4"
+                fontWeight="fw-400"
+                color="text-dark-green"
+                backgroundColor="bg-light"
+                borderRadius="br-6px"
+                type="link"
+                [URL]="'/portfolio/details/' + item.id"
+              ></confia-button>
             </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/visu.png" class="w-100"> 
-            </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/kazaroo.png" class="w-100"> 
-            </div>
-            <div class="keen-slider__slide number-slide1">
-                <img src="../../../assets/portfolio/axis.png" class="w-100"> 
-            </div>
-            </div>
-            <!-- <div class="arrow arrow--left ">
+            <img
+              width="634"
+              height="423"
+              loading="lazy"
+              fetchpriority="low"
+              [alt]="item.title"
+              [ngSrc]="item.image"
+              class="w-100"
+            />
+          </div>
+        </ng-container>
+      </div>
+      <!-- <div class="arrow arrow--left ">
                 <svg
                 [ngClass]="
                   ' arrow--left w-30px' + (currentSlide2 === 0 ? ' arrow--disabled' : '')
@@ -122,11 +178,6 @@
         <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
       </svg>
       </div> -->
-        </div>   
-    
     </div>
-        
-        </div>
-
-
-
+  </div>
+</div>

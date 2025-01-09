@@ -39,7 +39,10 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    filter: grayscale(0.7);
+    // filter: grayscale(0.7);
+    .portfolio-overlay{
+      display: none !important;
+    }
     img{
         transition: transform 1s ease-in-out;
     }
@@ -48,6 +51,9 @@
        img{
         transform: scale(1.05);
        }
+       .portfolio-overlay{
+        display: flex !important;
+      }
     }
 }
 .navigation-wrapper {

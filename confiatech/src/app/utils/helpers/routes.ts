@@ -15,9 +15,9 @@ export const routes:Iroute[]=[
         type:'text',
         label:'Services',
     },{
-        url:"/case-studies",
+        url:"/portfolio",
         type:'text',
-        label:'Case Studies',
+        label:'Portfolio',
     },{
         url:"/blogs",
         type:'text',

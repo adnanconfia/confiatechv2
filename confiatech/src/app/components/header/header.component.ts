@@ -24,6 +24,7 @@ paths:'subset',
 matrixParams:'subset',
 queryParams:'subset'
  }
+
  showSidebar(){
   this.visible=true;
  }

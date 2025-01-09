@@ -14,7 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'confiatech';
+  title = 'ConfiaTech';
   constructor(private loader:loaderService){}
   ngAfterViewInit() {
   setTimeout(() => {
