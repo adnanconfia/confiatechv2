@@ -4,13 +4,13 @@ import { faFacebookF, faInstagram, faLinkedinIn, faXTwitter } from '@fortawesome
 import { faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { routes } from '../../utils/helpers/routes';
 import { Iroute } from '../../utils/types/Iroutes.interface';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [FontAwesomeModule,CommonModule,RouterModule],
+  imports: [FontAwesomeModule,CommonModule,RouterModule,NgOptimizedImage],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })

@@ -10,7 +10,7 @@
           </h1>
         </div>
 
-        <p>{{ portfolio?.description }}</p>
+        <p [innerHTML]="portfolio?.description"></p>
         <h3 class="tw-font-bold" *ngIf="portfolio?.technologies">
           Technologies Used:
         </h3>
@@ -37,7 +37,7 @@
       </div>
       <div class="col-12 tw-text-center" *ngIf="portfolio?.url">
         <confia-button
-          content="View App"
+          content="Visit Site"
           type="link"
           backgroundColor="bg-dark-green"
           fontWeight="fw-400 mt-3 mt-md-0 "
