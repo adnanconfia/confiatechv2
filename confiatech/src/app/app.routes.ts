@@ -13,5 +13,6 @@ export const routes: Routes = [
     {path: 'services/graphic-designing', loadComponent: () => import('./pages/service-page/graphics/graphics.component').then(mod => mod.GraphicsComponent)},
     {path: 'services/devops', loadComponent: () => import('./pages/service-page/devops/devops.component').then(mod => mod.DevopsComponent)},
 
+    {path: 'blogs', loadComponent: () => import('./pages/blogs-page/blogs-page.component').then(mod => mod.BlogsPageComponent)},
 
 ];

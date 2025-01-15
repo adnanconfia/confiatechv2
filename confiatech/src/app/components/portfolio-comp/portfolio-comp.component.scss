@@ -42,17 +42,19 @@
     // filter: grayscale(0.7);
     .portfolio-overlay{
       display: none !important;
+    
     }
     img{
-        transition: transform 1s ease-in-out;
+        transition: transform 1s ease-in;
     }
     &:hover{
         filter: grayscale(0);
        img{
-        transform: scale(1.05);
+        transform: scale(1.02);
        }
        .portfolio-overlay{
         display: flex !important;
+        
       }
     }
 }

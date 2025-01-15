@@ -171,7 +171,7 @@ export class PortfolioCompComponent {
           this.currentSlide2 = s.track.details.rel
         },
     }, [
-      (slider) => {
+      (slider2) => {
         let timeout: string | number | NodeJS.Timeout | undefined
         let mouseOver = false
         function clearNextTimeout() {
@@ -181,23 +181,23 @@ export class PortfolioCompComponent {
           clearTimeout(timeout)
           if (mouseOver) return
           timeout = setTimeout(() => {
-            slider.next()
+            slider2.next()
           }, 5000)
         }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
+        slider2.on("created", () => {
+          slider2.container.addEventListener("mouseover", () => {
             mouseOver = true
             clearNextTimeout()
           })
-          slider.container.addEventListener("mouseout", () => {
+          slider2.container.addEventListener("mouseout", () => {
             mouseOver = false
             nextTimeout()
           })
           nextTimeout()
         })
-        slider.on("dragStarted", clearNextTimeout)
-        slider.on("animationEnded", nextTimeout)
-        slider.on("updated", nextTimeout)
+        slider2.on("dragStarted", clearNextTimeout)
+        slider2.on("animationEnded", nextTimeout)
+        slider2.on("updated", nextTimeout)
       },
     ])
   }

@@ -30,8 +30,8 @@ The redesigned website will showcase Al Zubair Marine Cargo’s global shipping 
             "MySQL"
           ],
           url:'https://alzubairmarinecargo.com/',
-          images:[]
-  
+          images:[],
+          metaDescription:`Discover the redesigned Alzubair Marine Cargo website, showcasing reliable global freight services with modern design and enhanced user experience.`
         },
         {  id:2,
           title:"Axis Ims",
@@ -55,8 +55,8 @@ Visit IMS to explore how this project demonstrates the power of technology in si
             "MySQL"
           ],
           url:'https://ims.confiatech.com',
-          images:[]
-  
+          images:[],
+          metaDescription:'Explore Axis IMS, a web app for managing immigration visas and inter-office tasks with Angular, Django, and AWS for seamless efficiency.'
         },
         {  id:3,
           title:"Desi Atta Chakki",
@@ -72,7 +72,8 @@ Desi Atta Chakki is a prime example of how a customized WordPress solution can t
             "MySQL"
           ],
           url:'https://desiattachakki.com/',
-          images:[]
+          images:[],
+          metaDescription:`See how ConfiaTech built an e-commerce platform for Desi Atta Chakki using WordPress and WooCommerce with a custom theme for online sales growth`
   
   
         },
@@ -97,7 +98,8 @@ Host App is a comprehensive solution that simplifies hotel operations, improves 
             "Firebase"
           ],
           url:'',
-          images:[]
+          images:[],
+          metaDescription:`Learn about My Host App, a hotel management solution using Angular, Firebase, and cloud hosting to streamline bookings and services.`
   
   
         },
@@ -117,7 +119,8 @@ Impirium is the perfect solution for businesses and organizations that need a se
             
           ],
           url:'https://impirium.pakdiagnostic.com/',
-          images:[]
+          images:[],
+          metaDescription:`Discover Impirium, a security-focused web app built with Angular and Django, offering advanced protection with AWS deployment.`
   
   
         },
@@ -139,7 +142,8 @@ With a powerful combination of Angular, ASP.NET, Onion Architecture, and Cloud F
             
           ],
           url:"https://guest.kazaroo.app/accommodation/9027d67f-376e-4626-16f3-08dc4fea1631",
-          images:[]
+          images:[],
+          metaDescription:`Explore Kazaroo, a versatile platform connecting owners, visitors, and artists, built with Angular, ASP.NET, and deployed on Azure.`
   
   
         },
@@ -160,7 +164,8 @@ Loom Centric helps users save time by automating repetitive tasks while maintain
             
           ],
           url:'https://app.loomcentric.com',
-          images:[]
+          images:[],
+          metaDescription:`See Loom Centric, a social media management app for scheduling posts across platforms, built with Angular, Django, and AWS deployment`
   
   
         },
@@ -183,7 +188,8 @@ My Coverage Plan is the ultimate solution for anyone seeking financial security 
             
           ],
           url:'https://advocus.confiatech.com/',
-          images:[]
+          images:[],
+          metaDescription:`Discover My Coverage Plan, a user-friendly web app for customizing medical insurance, built with Angular, Headless CMS, and AWS hosting.`
   
   
         },
@@ -202,7 +208,8 @@ Deployed on AWS, the platform benefits from reliable and secure cloud hosting, o
             
           ],
           url:'https://nugbyhassaan.com/',
-          images:[]
+          images:[],
+          metaDescription:`Explore Nug By Hassaan, an e-commerce website for high-end artificial jewelry, built with WordPress and hosted on shared hosting`
   
   
         },
@@ -224,7 +231,8 @@ For anyone seeking fresh perspectives and valuable information, New to the Stree
             
           ],
           url:'',
-          images:[]
+          images:[],
+          metaDescription:`Learn about New to the Street, a content-driven platform for industry news and insights, built with Angular, and AWS deployment.`
   
   
         },
@@ -246,7 +254,8 @@ Whether you want to save content for offline use or create a personal media libr
             
           ],
           url:'',
-          images:[]
+          images:[],
+          metaDescription:`Discover Play Local, a media downloader app for videos and audio from platforms like YouTube and TikTok, built with Flask,and Flutter.`
   
   
         },
@@ -273,7 +282,8 @@ Presentation Stack is the perfect solution for professionals, educators, and mar
             
           ],
           url:'',
-          images:[]
+          images:[],
+          metaDescription:`Explore Presentation Stack, a platform for customizable templates, built with React, ASP.NET, and deployed on AWS for seamless performance.`
   
         },
         {
@@ -297,7 +307,8 @@ VISU redefines advertising by combining advanced technology with a fair and enga
             
           ],
           url:'https://app.visu.network',
-          images:[]
+          images:[],
+          metaDescription:`See VISU, an innovative advertising platform connecting users and advertisers, built with Angular, Django, and AWS for secure deployment.`
   
   
         },  {
@@ -319,7 +330,8 @@ Sequest Consulting is the trusted partner for manufacturing businesses looking t
             
           ],
           url:'https://sequest-consulting.com',
-          images:[]
+          images:[],
+          metaDescription:`Discover Sequest Consulting, a web app for rapid migration to Infor LN, using Angular, Django, and AWS to optimize business processes.`
   
   
         },
@@ -337,6 +349,7 @@ image:string,
 description:string,
 technologies:string[],
 url:string,
-images:string[]
+images:string[],
+metaDescription:string
   
 }

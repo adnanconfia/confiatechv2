@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3 mt-5">
-        <h5>Quick links</h5>
+        <h6 class="tw-text-xl">Quick links</h6>
         <ng-container *ngFor="let item of urls">
           <div class="mt-2" *ngIf="item.type === 'text'">
             <a
@@ -33,7 +33,7 @@
         </ng-container>
       </div>
       <div class="col-12 col-md-6 col-lg-3 mt-5">
-        <h5>Contact</h5>
+        <h6 class="tw-text-xl">Contact</h6>
         <div class="mt-2">
           <a
             href="https://wa.me/+447376059110"
@@ -73,25 +73,29 @@
         </div>
       </div>
       <div class="col-12 col-md-6 col-lg-3 mt-5">
-        <h5>Follow us</h5>
+        <h6 class="tw-text-xl">Follow us</h6>
         <a
           href="https://wa.me/+447376059110"
+          aria-label="Visit facebook page"
           class="text-decoration-none text-light me-2"
           ><fa-icon [icon]="facebook"></fa-icon
         ></a>
         <a
           href="https://wa.me/+447376059110"
+          aria-label="Visit x page"
           class="text-decoration-none text-light me-2"
           ><fa-icon [icon]="x"></fa-icon
         ></a>
         <a
           href="https://wa.me/+447376059110"
+          aria-label="Visit instagram profile"
           class="text-decoration-none text-light me-2"
           ><fa-icon [icon]="instagram"></fa-icon
         ></a>
         <a
           href="https://wa.me/+447376059110"
           class="text-decoration-none text-light"
+          aria-label="Visit linkein page"
           ><fa-icon [icon]="linkedin"></fa-icon
         ></a>
       </div>

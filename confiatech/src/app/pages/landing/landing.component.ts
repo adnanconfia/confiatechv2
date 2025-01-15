@@ -21,6 +21,6 @@ import { Meta, Title } from '@angular/platform-browser';
     constructor(  private meta: Meta,
       private title: Title){
         this.title.setTitle("ConfiaTech - Dream Digitizers");
-      this.meta.updateTag({ name: 'description', content: 'ConfiaTech, where innovation meets reliability in IT solutions. We are dedicated to transforming your ideas into reality through cutting-edge technology' });
+      this.meta.updateTag({ name: 'description', content: 'ConfiaTech Pvt Ltd offers innovative tech solutions in web development, mobile apps, and enterprise software to drive your success' });
       }
 }

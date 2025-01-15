@@ -10,7 +10,7 @@
           </h1>
         </div>
 
-        <p [innerHTML]="portfolio?.description"></p>
+        <p [innerHTML]="safeHtml"></p>
         <h3 class="tw-font-bold" *ngIf="portfolio?.technologies">
           Technologies Used:
         </h3>
