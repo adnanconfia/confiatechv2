@@ -1,5 +1,5 @@
 import { CommonModule, isPlatformBrowser, NgOptimizedImage } from '@angular/common';
-import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 import { ConfiaButtonComponent } from '../../utils/confia-button/confia-button.component';
 import { portfolio, PortfolioServiceService } from '../../services/portfolio-service.service';
@@ -14,6 +14,8 @@ import { portfolio, PortfolioServiceService } from '../../services/portfolio-ser
 export class PortfolioCompComponent {
   @ViewChild("sliderRef") sliderRef!: ElementRef<HTMLElement>
   @ViewChild("sliderRef2") sliderRef2!: ElementRef<HTMLElement>
+  @Input() Id:number=0;
+  @Input() isHome:boolean=true;
   slider: KeenSliderInstance | undefined ;
   slider2: KeenSliderInstance | undefined ;
   isBrowser:boolean;
@@ -35,6 +37,8 @@ export class PortfolioCompComponent {
     {
               var _origin: any = "center"
               var self=this;
+              if(this.isHome)
+     {
       this.slider = new KeenSlider(this.sliderRef.nativeElement,  {
         loop: true,
         mode:"snap",
@@ -117,6 +121,7 @@ export class PortfolioCompComponent {
         slider.on("updated", nextTimeout)
       },
     ])
+     }
       this.slider2 = new KeenSlider(this.sliderRef2.nativeElement,  {
         loop: true,
         mode:"snap",

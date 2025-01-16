@@ -1,8 +1,8 @@
 <div class="w-100">
   <div class="w-100">
     <div class="w-100">
-      <h2 class="text-dark-green mx-0 tw-text-center px-0 fw-bold">
-        Portfolio
+      <h2 class="text-dark-green mx-0 tw-text-center px-0 tw-py-6 fw-bold">
+        {{ isHome ? "Portfolio" : "More Portfolio" }}
       </h2>
     </div>
     <!-- <div class="row pb-4">
@@ -47,7 +47,7 @@
            ngSrc="../../../assets/portfolio/axis.jpg" class="w-100"> 
             </div>
         </div> -->
-    <div class="navigation-wrapper" *ngIf="portfolio.length > 0">
+    <div class="navigation-wrapper" *ngIf="portfolio.length > 0 && isHome">
       <div class="keen-slider mt-5" #sliderRef>
         <ng-container *ngFor="let item of portfolio.reverse(); let i = index">
           <div class="keen-slider__slide number-slide{{ i }}">
@@ -116,7 +116,10 @@
     <div class="navigation-wrapper" *ngIf="portfolio.length > 0">
       <div class="keen-slider mt-0" #sliderRef2>
         <ng-container *ngFor="let item of portfolio; let i = index">
-          <div class="keen-slider__slide number-slide{{ i }}">
+          <div
+            class="keen-slider__slide number-slide{{ i }}"
+            *ngIf="item.id != Id"
+          >
             <div
               class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
             >

@@ -30,7 +30,13 @@ The redesigned website will showcase Al Zubair Marine Cargo’s global shipping 
             "MySQL"
           ],
           url:'https://alzubairmarinecargo.com/',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/Alzubair/az1.png`,
+            `${window.location.origin}/assets/portfolio/Alzubair/az2.png`,
+            `${window.location.origin}/assets/portfolio/Alzubair/az3.png`,
+            `${window.location.origin}/assets/portfolio/Alzubair/az4.png`,
+            `${window.location.origin}/assets/portfolio/Alzubair/az5.png`,
+          ],
           metaDescription:`Discover the redesigned Alzubair Marine Cargo website, showcasing reliable global freight services with modern design and enhanced user experience.`
         },
         {  id:2,
@@ -55,7 +61,13 @@ Visit IMS to explore how this project demonstrates the power of technology in si
             "MySQL"
           ],
           url:'https://ims.confiatech.com',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/AxisIms/axis1.png`,
+            `${window.location.origin}/assets/portfolio/AxisIms/axis2.png`,
+            `${window.location.origin}/assets/portfolio/AxisIms/axis3.png`,
+            `${window.location.origin}/assets/portfolio/AxisIms/axis4.png`,
+            `${window.location.origin}/assets/portfolio/AxisIms/axis5.png`,
+          ],
           metaDescription:'Explore Axis IMS, a web app for managing immigration visas and inter-office tasks with Angular, Django, and AWS for seamless efficiency.'
         },
         {  id:3,
@@ -72,7 +84,15 @@ Desi Atta Chakki is a prime example of how a customized WordPress solution can t
             "MySQL"
           ],
           url:'https://desiattachakki.com/',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/dac/dac1.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac2.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac3.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac4.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac5.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac6.png`,
+            `${window.location.origin}/assets/portfolio/dac/dac7.png`,
+          ],
           metaDescription:`See how ConfiaTech built an e-commerce platform for Desi Atta Chakki using WordPress and WooCommerce with a custom theme for online sales growth`
   
   
@@ -98,7 +118,15 @@ Host App is a comprehensive solution that simplifies hotel operations, improves 
             "Firebase"
           ],
           url:'',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp1.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp2.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp3.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp4.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp5.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp6.png`,
+            `${window.location.origin}/assets/portfolio/HostApp/hostApp7.png`,
+          ],
           metaDescription:`Learn about My Host App, a hotel management solution using Angular, Firebase, and cloud hosting to streamline bookings and services.`
   
   
@@ -119,7 +147,13 @@ Impirium is the perfect solution for businesses and organizations that need a se
             
           ],
           url:'https://impirium.pakdiagnostic.com/',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/Impirium/impirum1.jpg`,
+            `${window.location.origin}/assets/portfolio/Impirium/impirum2.jpg`,
+            `${window.location.origin}/assets/portfolio/Impirium/impirum3.jpg`,
+            `${window.location.origin}/assets/portfolio/Impirium/impirum4.jpg`,
+            `${window.location.origin}/assets/portfolio/Impirium/impirum5.jpg`,
+          ],
           metaDescription:`Discover Impirium, a security-focused web app built with Angular and Django, offering advanced protection with AWS deployment.`
   
   
@@ -142,7 +176,16 @@ With a powerful combination of Angular, ASP.NET, Onion Architecture, and Cloud F
             
           ],
           url:"https://guest.kazaroo.app/accommodation/9027d67f-376e-4626-16f3-08dc4fea1631",
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo1-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo2-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo3-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo4-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo5-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo6-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo7-portrait.png`,
+            `${window.location.origin}/assets/portfolio/kazaroo/kazaroo8-portrait.png`,
+          ],
           metaDescription:`Explore Kazaroo, a versatile platform connecting owners, visitors, and artists, built with Angular, ASP.NET, and deployed on Azure.`
   
   
@@ -164,7 +207,14 @@ Loom Centric helps users save time by automating repetitive tasks while maintain
             
           ],
           url:'https://app.loomcentric.com',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric1.png`,
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric2.jpg`,
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric3.jpg`,
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric4.jpg`,
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric5.jpg`,
+            `${window.location.origin}/assets/portfolio/LoomCentric/loomcentric6.jpg`,
+          ],
           metaDescription:`See Loom Centric, a social media management app for scheduling posts across platforms, built with Angular, Django, and AWS deployment`
   
   
@@ -187,8 +237,15 @@ My Coverage Plan is the ultimate solution for anyone seeking financial security 
             "Nodejs",
             
           ],
-          url:'https://advocus.confiatech.com/',
-          images:[],
+          url:'https://home.mycoverageplan.com/',
+          images:[
+            `${window.location.origin}/assets/portfolio/MCP/mcp1.jpg`,
+            `${window.location.origin}/assets/portfolio/MCP/mcp2.jpg`,
+            `${window.location.origin}/assets/portfolio/MCP/mcp3.jpg`,
+            `${window.location.origin}/assets/portfolio/MCP/mcp4.jpg`,
+            `${window.location.origin}/assets/portfolio/MCP/mcp5.jpg`,
+            `${window.location.origin}/assets/portfolio/MCP/mcp6.jpg`,
+          ],
           metaDescription:`Discover My Coverage Plan, a user-friendly web app for customizing medical insurance, built with Angular, Headless CMS, and AWS hosting.`
   
   
@@ -208,7 +265,13 @@ Deployed on AWS, the platform benefits from reliable and secure cloud hosting, o
             
           ],
           url:'https://nugbyhassaan.com/',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/NBH/nbh1.png`,
+            `${window.location.origin}/assets/portfolio/NBH/nbh2.png`,
+            `${window.location.origin}/assets/portfolio/NBH/nbh3.png`,
+            `${window.location.origin}/assets/portfolio/NBH/nbh4.png`,
+            `${window.location.origin}/assets/portfolio/NBH/nbh5.png`,
+          ],
           metaDescription:`Explore Nug By Hassaan, an e-commerce website for high-end artificial jewelry, built with WordPress and hosted on shared hosting`
   
   
@@ -231,7 +294,18 @@ For anyone seeking fresh perspectives and valuable information, New to the Stree
             
           ],
           url:'',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/ntts/ntts1.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts2.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts3.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts4.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts5.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts6.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts7.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts8.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts9.png`,
+            `${window.location.origin}/assets/portfolio/ntts/ntts10.png`,
+          ],
           metaDescription:`Learn about New to the Street, a content-driven platform for industry news and insights, built with Angular, and AWS deployment.`
   
   
@@ -254,7 +328,13 @@ Whether you want to save content for offline use or create a personal media libr
             
           ],
           url:'',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/playlocal/1.png`,
+            `${window.location.origin}/assets/portfolio/playlocal/2.png`,
+            `${window.location.origin}/assets/portfolio/playlocal/3.png`,
+            `${window.location.origin}/assets/portfolio/playlocal/4.png`,
+            `${window.location.origin}/assets/portfolio/playlocal/5.png`,
+          ],
           metaDescription:`Discover Play Local, a media downloader app for videos and audio from platforms like YouTube and TikTok, built with Flask,and Flutter.`
   
   
@@ -282,7 +362,12 @@ Presentation Stack is the perfect solution for professionals, educators, and mar
             
           ],
           url:'',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/Pstack/ps1.png`,
+            `${window.location.origin}/assets/portfolio/Pstack/ps2.png`,
+            `${window.location.origin}/assets/portfolio/Pstack/ps3.png`,
+            `${window.location.origin}/assets/portfolio/Pstack/ps4.png`,
+          ],
           metaDescription:`Explore Presentation Stack, a platform for customizable templates, built with React, ASP.NET, and deployed on AWS for seamless performance.`
   
         },
@@ -307,7 +392,16 @@ VISU redefines advertising by combining advanced technology with a fair and enga
             
           ],
           url:'https://app.visu.network',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/visu/visu1-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu2-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu3-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu4-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu5-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu6-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu7-portrait.png`,
+            `${window.location.origin}/assets/portfolio/visu/visu8-portrait.png`,
+          ],
           metaDescription:`See VISU, an innovative advertising platform connecting users and advertisers, built with Angular, Django, and AWS for secure deployment.`
   
   
@@ -330,7 +424,16 @@ Sequest Consulting is the trusted partner for manufacturing businesses looking t
             
           ],
           url:'https://sequest-consulting.com',
-          images:[],
+          images:[
+            `${window.location.origin}/assets/portfolio/sequest/sequest1.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest2.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest3.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest4.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest5.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest6.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest7.png`,
+            `${window.location.origin}/assets/portfolio/sequest/sequest8.png`,
+          ],
           metaDescription:`Discover Sequest Consulting, a web app for rapid migration to Infor LN, using Angular, Django, and AWS to optimize business processes.`
   
   

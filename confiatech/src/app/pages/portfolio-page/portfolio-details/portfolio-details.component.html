@@ -29,12 +29,30 @@
             [alt]="portfolio?.title"
             width="636"
             height="424"
-            loading="lazy"
+            priority
             class="w-100 tw-rounded-xl"
-            fetchpriority="low"
           />
         </ng-container>
       </div>
+      <ng-container *ngIf="portfolio?.images">
+        <div class="col-12 tw-mt-3">
+          <h3 class="tw-font-bold">Some screenshots of the app:</h3>
+        </div>
+        <div
+          class="col-12 col-md-6 col-lg-4 col-xl-3"
+          *ngFor="let image of portfolio?.images"
+        >
+          <p-image
+            [src]="image"
+            [previewImageSrc]="image"
+            [alt]="portfolio?.title"
+            class="w-100 tw-rounded-xl"
+            loading="lazy"
+            [preview]="true"
+          />
+        </div>
+      </ng-container>
+
       <div class="col-12 tw-text-center" *ngIf="portfolio?.url">
         <confia-button
           content="Visit Site"
@@ -50,4 +68,10 @@
       </div>
     </div>
   </div>
+</div>
+<div class="bg-dark-green-o">
+  <app-portfolio-comp
+    [Id]="portfolio?.id || 0"
+    [isHome]="false"
+  ></app-portfolio-comp>
 </div>

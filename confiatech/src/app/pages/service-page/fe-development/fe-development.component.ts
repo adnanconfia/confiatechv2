@@ -17,9 +17,8 @@ export class FEDevelopmentComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.title.setTitle("Front-End Development");
-    this.meta.updateTag({ name: 'description', content: `
-      ConfiaTech Pvt Ltd provides expert front-end development services using modern frameworks like React and Angular for fast and responsive websites.` });
 
+    
 
   }
 }

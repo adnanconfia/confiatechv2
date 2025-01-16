@@ -5,11 +5,13 @@ import { portfolio } from '../../../services/portfolio-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ConfiaButtonComponent } from '../../../utils/confia-button/confia-button.component';
+import { ImageModule } from 'primeng/image';
+import { PortfolioCompComponent } from '../../../components/portfolio-comp/portfolio-comp.component';
 
 @Component({
   selector: 'app-portfolio-details',
   standalone: true,
-  imports: [NgOptimizedImage,CommonModule,ConfiaButtonComponent],
+  imports: [NgOptimizedImage,CommonModule,ConfiaButtonComponent,ImageModule,PortfolioCompComponent],
   templateUrl: './portfolio-details.component.html',
   styleUrl: './portfolio-details.component.scss'
 })
