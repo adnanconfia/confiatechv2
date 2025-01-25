@@ -4,7 +4,7 @@
   <div class="container-lg">
     <nav class="navbar navbar-expand-lg bg-transparent">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="#" title="Home"
           ><img
             ngSrc="../../../assets/images/logo.png"
             alt="Logo"
@@ -26,6 +26,7 @@
             <ng-container *ngFor="let item of urls">
               <li class="nav-item" *ngIf="item.type === 'text'">
                 <a
+                  [title]="item.label"
                   class="nav-link"
                   aria-current="page"
                   [fragment]="item.fragment"
@@ -59,7 +60,7 @@
         <div
           class="d-flex justify-content-between w-100 align-items-center p-5"
         >
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="#" title="Home"
             ><img
               ngSrc="../../../assets/images/logo.png"
               alt="Logo"
@@ -77,6 +78,7 @@
           <ng-container *ngFor="let item of urls">
             <li *ngIf="item.type === 'text'" (click)="hideSidebar()">
               <a
+                [title]="item.label"
                 class="nav-link"
                 aria-current="page"
                 [routerLinkActive]="'active'"

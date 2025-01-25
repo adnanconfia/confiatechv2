@@ -14,7 +14,6 @@ import { routes } from '../helpers/routes';
 
 export class ConfiaButtonComponent {
 @Input() type:buttonType='button';
-
 @Input() backgroundColor:bgColor='bg-dark-green';
 @Input() color: Color = 'text-white';
 @Input() fragment!:string;

@@ -18,11 +18,12 @@ export const routes:Iroute[]=[
         url:"/portfolio",
         type:'text',
         label:'Portfolio',
-    },{
-        url:"/blogs",
-        type:'text',
-        label:'Blogs',
     },
+    // {
+    //     url:"/blogs",
+    //     type:'text',
+    //     label:'Blogs',
+    // },
     {
         url:"/",
         type:'button',

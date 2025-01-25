@@ -47,39 +47,41 @@
            ngSrc="../../../assets/portfolio/axis.jpg" class="w-100"> 
             </div>
         </div> -->
-    <div class="navigation-wrapper" *ngIf="portfolio.length > 0 && isHome">
+    <div class="navigation-wrapper">
       <div class="keen-slider mt-5" #sliderRef>
-        <ng-container *ngFor="let item of portfolio.reverse(); let i = index">
-          <div class="keen-slider__slide number-slide{{ i }}">
-            <div
-              class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
-            >
-              <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
-                {{ item.title }}
-              </h3>
-              <confia-button
-                [content]="'View Project '"
-                hoverClass="whiteBtnHover"
-                fontSize="fs-14px"
-                padding="px-3 py-2 mt-4"
-                fontWeight="fw-400"
-                color="text-dark-green"
-                backgroundColor="bg-light"
-                borderRadius="br-6px"
-                type="link"
-                [URL]="'/portfolio/details/' + item.id"
-              ></confia-button>
+        <ng-container *ngIf="portfolio.length > 0 && isHome">
+          <ng-container *ngFor="let item of portfolioReverse; let i = index">
+            <div class="keen-slider__slide number-slide1">
+              <div
+                class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
+              >
+                <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
+                  {{ item.title }}
+                </h3>
+                <confia-button
+                  [content]="'View Project '"
+                  hoverClass="whiteBtnHover"
+                  fontSize="fs-14px"
+                  padding="px-3 py-2 mt-4"
+                  fontWeight="fw-400"
+                  color="text-dark-green"
+                  backgroundColor="bg-light"
+                  borderRadius="br-6px"
+                  type="link"
+                  [URL]="'/portfolio/details/' + item.id"
+                ></confia-button>
+              </div>
+              <img
+                width="634"
+                height="423"
+                loading="lazy"
+                fetchpriority="low"
+                [alt]="item.title"
+                [ngSrc]="item.image"
+                class="w-100"
+              />
             </div>
-            <img
-              width="634"
-              height="423"
-              loading="lazy"
-              fetchpriority="low"
-              [alt]="item.title"
-              [ngSrc]="item.image"
-              class="w-100"
-            />
-          </div>
+          </ng-container>
         </ng-container>
       </div>
       <!-- <div class="arrow arrow--left ">
@@ -113,74 +115,43 @@
       </svg>
       </div> -->
     </div>
-    <div class="navigation-wrapper" *ngIf="portfolio.length > 0">
+    <div class="navigation-wrapper">
       <div class="keen-slider mt-0" #sliderRef2>
-        <ng-container *ngFor="let item of portfolio; let i = index">
-          <div
-            class="keen-slider__slide number-slide{{ i }}"
-            *ngIf="item.id != Id"
-          >
-            <div
-              class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
-            >
-              <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
-                {{ item.title }}
-              </h3>
-              <confia-button
-                [content]="'View Project '"
-                hoverClass="whiteBtnHover"
-                fontSize="fs-14px"
-                padding="px-3 py-2 mt-4"
-                fontWeight="fw-400"
-                color="text-dark-green"
-                backgroundColor="bg-light"
-                borderRadius="br-6px"
-                type="link"
-                [URL]="'/portfolio/details/' + item.id"
-              ></confia-button>
+        <ng-container *ngIf="portfolio.length > 0">
+          <ng-container *ngFor="let item of portfolio; let i = index">
+            <div class="keen-slider__slide number-slide1" *ngIf="item.id != Id">
+              <div
+                class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
+              >
+                <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
+                  {{ item.title }}
+                </h3>
+                <confia-button
+                  [content]="'View Project '"
+                  hoverClass="whiteBtnHover"
+                  fontSize="fs-14px"
+                  padding="px-3 py-2 mt-4"
+                  fontWeight="fw-400"
+                  color="text-dark-green"
+                  backgroundColor="bg-light"
+                  borderRadius="br-6px"
+                  type="link"
+                  [URL]="'/portfolio/details/' + item.id"
+                ></confia-button>
+              </div>
+              <img
+                width="634"
+                height="423"
+                loading="lazy"
+                fetchpriority="low"
+                [alt]="item.title"
+                [ngSrc]="item.image"
+                class="w-100"
+              />
             </div>
-            <img
-              width="634"
-              height="423"
-              loading="lazy"
-              fetchpriority="low"
-              [alt]="item.title"
-              [ngSrc]="item.image"
-              class="w-100"
-            />
-          </div>
+          </ng-container>
         </ng-container>
       </div>
-      <!-- <div class="arrow arrow--left ">
-                <svg
-                [ngClass]="
-                  ' arrow--left w-30px' + (currentSlide2 === 0 ? ' arrow--disabled' : '')
-                "
-                (click)="slider2?.prev()"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
-                />
-              </svg>
-             </div>
-             <div class="arrow arrow--right">
-      <svg
-        *ngIf="slider2"
-        [ngClass]="
-          ' arrow--right w-30px' +
-          (slider2.track.details.slides.length - 1 === currentSlide2
-            ? ' arrow--disabled'
-            : '')
-        "
-        (click)="slider2?.next()"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-      </svg>
-      </div> -->
     </div>
   </div>
 </div>

@@ -63,7 +63,8 @@
   ></fa-icon>
 </button>
 <a
-  href="{{ URL }}"
+  routerLink="{{ URL }}"
+  [title]="URL"
   target="{{ target }}"
   *ngIf="type == 'link' && !fragment"
   (click)="clickEvent()"
@@ -98,6 +99,7 @@
 <a
   [routerLink]="URL"
   target="{{ target }}"
+  [title]="URL"
   [fragment]="fragment"
   *ngIf="type == 'link' && fragment"
   (click)="clickEvent()"

@@ -1,5 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { Observable ,of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,11 @@ export class PortfolioServiceService {
   constructor( @Inject(PLATFORM_ID) platformId: Object) {
      this.isBrowser = isPlatformBrowser(platformId);
     }
+    
   getPortfolio():portfolio[]{
+    let portfolioData:portfolio[]=[]; 
     if(this.isBrowser){
-      return [
+      portfolioData =  [
         {
           id:1,
           title:"Alzubair Marine Cargo",
@@ -439,8 +442,9 @@ Sequest Consulting is the trusted partner for manufacturing businesses looking t
   
         },
       ]
+      return portfolioData;
     }else{
-      return [];
+      return portfolioData;
     }
   
   }
@@ -456,3 +460,4 @@ images:string[],
 metaDescription:string
   
 }
+

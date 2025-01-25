@@ -12,7 +12,16 @@ export const routes: Routes = [
     {path: 'services/ui-ux-designing', loadComponent: () => import('./pages/service-page/ui-designing/ui-designing.component').then(mod => mod.UiDesigningComponent)},
     {path: 'services/graphic-designing', loadComponent: () => import('./pages/service-page/graphics/graphics.component').then(mod => mod.GraphicsComponent)},
     {path: 'services/devops', loadComponent: () => import('./pages/service-page/devops/devops.component').then(mod => mod.DevopsComponent)},
+    {path: 'services/customized-solutions', loadComponent: () => import('./pages/service-page/customized-software/customized-software.component').then(mod => mod.CustomizedSoftwareComponent)},
 
     {path: 'blogs', loadComponent: () => import('./pages/blogs-page/blogs-page.component').then(mod => mod.BlogsPageComponent)},
+    {
+        path:"**",
+     redirectTo:"not-found",
+     
+    }, {
+        path:"not-found",
+        loadComponent: () => import('./pages/not-found/not-found.component').then(mod => mod.NotFoundComponent)
+    }
 
 ];

@@ -20,6 +20,7 @@ export class PortfolioCompComponent {
   slider2: KeenSliderInstance | undefined ;
   isBrowser:boolean;
   portfolio:portfolio[]=[];
+  portfolioReverse:portfolio[]=[];
   currentSlide: number = 1
   currentSlide2: number = 2
   isPaused:boolean=false;
@@ -31,97 +32,105 @@ export class PortfolioCompComponent {
    }
   loadPortfolio(){
     this.portfolio = this.portfolioService.getPortfolio();
+    this.portfolioReverse = this.portfolio.reverse(); 
+
+
+
   }
-  ngAfterViewInit() {
-    if(this.isBrowser)
-    {
-              var _origin: any = "center"
-              var self=this;
-              if(this.isHome)
-     {
-      this.slider = new KeenSlider(this.sliderRef.nativeElement,  {
-        loop: true,
-        mode:"snap",
-        drag:true,
-        breakpoints: {
-          "(min-width: 570px)": {
-            slides: { perView: 1, origin: _origin, spacing: 0 },
-            //  range: {
-            //    min: _range,
-            //    max: _range * -1
-            //    },
-          },
-          "(min-width: 768px)": {
-            slides: { perView: 2, origin: _origin, spacing: 0 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
+  ngAfterViewInit(): void {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
 
+    if(this.isBrowser )
+      {
+                var _origin: any = "center"
+                var self=this;
+                if(this.isHome )
+       {
+        this.slider = new KeenSlider(this.sliderRef.nativeElement,  {
+          loop: true,
+          mode:"snap",
+          drag:true,
+          breakpoints: {
+            "(min-width: 570px)": {
+              slides: { perView: 1, origin: _origin, spacing: 0 },
+              //  range: {
+              //    min: _range,
+              //    max: _range * -1
+              //    },
+            },
+            "(min-width: 768px)": {
+              slides: { perView: 2, origin: _origin, spacing: 0 },
+              //  range: {
+              //    min: _range,
+              //    max: maxRange
+              //  },
+  
+            },
+            "(min-width: 992px)": {
+              slides: { perView: 2, origin: _origin, spacing: 0 },
+              //  range: {
+              //    min: _range,
+              //    max: maxRange
+              //  },
+  
+            },
+            "(min-width: 1200px)": {
+              slides: { perView: 3, origin: _origin, spacing: 0 },
+              //  range: {
+              //    min: _range,
+              //    max: maxRange
+              //  },
+  
+            }
           },
-          "(min-width: 992px)": {
-            slides: { perView: 2, origin: _origin, spacing: 0 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
-
+          //  range:{
+          //    min: _range,
+          //    max: maxRange
+          //  }
+  
+          slides: {
+            perView: 1,
+            origin: _origin,
+            spacing: 0,
+  
           },
-          "(min-width: 1200px)": {
-            slides: { perView: 3, origin: _origin, spacing: 0 },
-            //  range: {
-            //    min: _range,
-            //    max: maxRange
-            //  },
-
+          initial: this.currentSlide,
+          slideChanged: (s) => {
+            this.currentSlide = s.track.details.rel
+          },
+      }, [
+      (slider) => {
+          let timeout: string | number | NodeJS.Timeout | undefined
+          let mouseOver = false
+          function clearNextTimeout() {
+            clearTimeout(timeout)
           }
-        },
-        //  range:{
-        //    min: _range,
-        //    max: maxRange
-        //  }
-
-        slides: {
-          perView: 1,
-          origin: _origin,
-          spacing: 0,
-
-        },
-        initial: this.currentSlide,
-        slideChanged: (s) => {
-          this.currentSlide = s.track.details.rel
-        },
-    }, [
-    (slider) => {
-        let timeout: string | number | NodeJS.Timeout | undefined
-        let mouseOver = false
-        function clearNextTimeout() {
-          clearTimeout(timeout)
-        }
-        function nextTimeout() {
-          clearTimeout(timeout)
-          if (mouseOver) return
-          timeout = setTimeout(() => {
-            slider.next()
-          }, 5000)
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true
-            clearNextTimeout()
-          })
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false
+          function nextTimeout() {
+            clearTimeout(timeout)
+            if (mouseOver) return
+            timeout = setTimeout(() => {
+              slider.next()
+            }, 5000)
+          }
+          slider.on("created", () => {
+            slider.container.addEventListener("mouseover", () => {
+              mouseOver = true
+              clearNextTimeout()
+            })
+            slider.container.addEventListener("mouseout", () => {
+              mouseOver = false
+              nextTimeout()
+            })
             nextTimeout()
           })
-          nextTimeout()
-        })
-        slider.on("dragStarted", clearNextTimeout)
-        slider.on("animationEnded", nextTimeout)
-        slider.on("updated", nextTimeout)
-      },
-    ])
-     }
+          slider.on("dragStarted", clearNextTimeout)
+          slider.on("animationEnded", nextTimeout)
+          slider.on("updated", nextTimeout)
+        },
+      ])  
+       }
+  
       this.slider2 = new KeenSlider(this.sliderRef2.nativeElement,  {
         loop: true,
         mode:"snap",
@@ -205,9 +214,9 @@ export class PortfolioCompComponent {
         slider2.on("updated", nextTimeout)
       },
     ])
+     
+    }
   }
-  }
-
   ngOnDestroy() {
     if (this.slider && this.isBrowser){
        this.slider?.destroy()

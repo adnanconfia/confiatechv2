@@ -3,7 +3,7 @@
 >
   <div class="container py-5">
     <div class="row pb-4">
-      <div class="col-12">
+      <div class="col-12" [@title]="titleState">
         <div
           class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between"
         >
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="row mt-4 pb-5 service-row">
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service3]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -93,7 +93,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service2]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -120,7 +120,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -147,7 +147,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service3]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -177,7 +177,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6 col-lg-4">
+      <div class="col-12 col-md-6 col-lg-4" [@service2]="state">
         <div class="card px-4 py-3 h-100 border-0">
           <div class="card-header bg-transparent border-0">
             <div
@@ -208,7 +208,42 @@
         </div>
       </div>
 
-      <div class="col-12 text-center" *ngIf="!isServicePage">
+      <div class="col-12 col-md-6 col-lg-4" [@service]="state">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="computer" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Customized Software for <br />
+              Law firm
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Developing powerful, user-friendly web applications for law
+                firms to enhance productivity and streamline processes.
+              </p>
+            </div>
+          </div>
+          <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+            <a
+              [routerLink]="'/services/customized-solutions'"
+              class="text-decoration-none text-dark-green"
+              >Explore now</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-12 text-center"
+        *ngIf="!isServicePage"
+        [@title]="titleState"
+      >
         <confia-button
           content="See All"
           target="_parent"
@@ -227,7 +262,7 @@
   <div class="w-100 mb-min-8per">
     <div class="container-lg">
       <div class="row">
-        <div class="col-12 col-md-6 pe-md-0 p-0">
+        <div class="col-12 col-md-6 pe-md-0 p-0" [@service]="state">
           <div class="serviceType h-100 bg-dark-green">
             <div
               class="w-100 p-4 d-flex align-items-center justify-content-between"
@@ -267,7 +302,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 ps-md-0 p-0">
+        <div class="col-12 col-md-6 ps-md-0 p-0" [@service2]="state">
           <div class="serviceType2 h-100 bg-dark-green-o">
             <div
               class="w-100 p-4 d-flex align-items-center justify-content-between"

@@ -1,147 +1,228 @@
 <div class="tw-relative">
-    <div class="mt-4 pb-5 keen-slider " #sliderRef>
-        <div class=" keen-slider__slide number-slide1" *ngIf="serviceName!='fe'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="laptopCodeIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">Front-End <br /> Development</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Crafting visually stunning, responsive, and user-friendly interfaces that
-                            captivate and
-                            engage your audience.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 bg-transparent border-0 pb-3  text-start">
-                    <a [routerLink]="'/services/fe-development'" class="text-decoration-none text-dark-green">Learn More</a>
-    
-                </div>
-            </div>
+  <div class="mt-4 pb-5 keen-slider" #sliderRef>
+    <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'fe'">
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="laptopCodeIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            Front-End <br />
+            Development
+          </h5>
         </div>
-        <div class=" keen-slider__slide number-slide1" *ngIf="serviceName!='be'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="backEndIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">Back-End <br /> Web Development</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Building robust, scalable, and secure server-side solutions to power
-                            seamless and
-                            efficient web applications.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 bg-transparent border-0 text-start pb-3 ">
-                    <a [routerLink]="'/services/be-development'" class="text-decoration-none text-dark-green">Learn More</a>
-    
-    
-                </div>
-            </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Crafting visually stunning, responsive, and user-friendly
+              interfaces that captivate and engage your audience.
+            </p>
+          </div>
         </div>
-    
-        <div class=" keen-slider__slide number-slide1" *ngIf="serviceName!='mobile'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="mobileIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">Mobile App <br />Development</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Building robust, scalable, and secure server-side solutions to power
-                            seamless and
-                            efficient web applications.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
-                    <a [routerLink]="'/services/mobile-app-development'" class="text-decoration-none text-dark-green">Learn More</a>
-
-    
-                </div>
-            </div>
+        <div class="card-footer mt-1 bg-transparent border-0 pb-3 text-start">
+          <a
+            [routerLink]="'/services/fe-development'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
         </div>
-        <div class=" keen-slider__slide number-slide1" *ngIf="serviceName!='ui'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="uiIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">User Interface and <br />Experience Designs</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Creating intuitive, engaging, and visually appealing user experiences
-                            that delight and retain your customers.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
-                    <a [routerLink]="'/services/ui-ux-designing'" class="text-decoration-none text-dark-green">Learn More</a>
-
-    
-                </div>
-            </div>
-        </div>
-        <div class=" keen-slider__slide number-slide1"  *ngIf="serviceName!='graphics'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="graphicIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">High Quality <br /> Graphic Designs</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Crafting visually stunning and impactful designs that communicate your
-                            brand’s message and captivate your audience.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">    
-                     <a [routerLink]="'/services/graphic-designing'" class="text-decoration-none text-dark-green">Learn More</a>
-
-    
-                </div>
-            </div>
-        </div>
-     
-        <div class=" keen-slider__slide number-slide1"  *ngIf="serviceName!='devops'">
-            <div class="card px-4 py-3 h-100 border-0    ">
-                <div class="card-header bg-transparent border-0">
-                    <div
-                        class="w-50px h-50px my-4  text-aqua rounded-circle text-white d-flex align-items-center justify-content-start">
-                        <fa-icon [icon]="serverIcon" size="2x"></fa-icon>
-                    </div>
-                    <h5 class="fw-bold">DevOps<br/> Solutions</h5>
-                </div>
-                <div class="card-body py-0 border-0">
-                    <div class="">
-                        <p class="p-0 m-0">Creating powerful, user-friendly desktop applications to enhance
-                            productivity and streamline processes.</p>
-                    </div>
-                </div>
-                <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
-                    <a [routerLink]="'/services/devops'" class="text-decoration-none text-dark-green">Learn More</a>
-
-    
-                </div>
-            </div>
-        </div>
-    
- 
+      </div>
     </div>
-    <svg
+    <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'be'">
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="backEndIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            Back-End <br />
+            Web Development
+          </h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Building robust, scalable, and secure server-side solutions to
+              power seamless and efficient web applications.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 bg-transparent border-0 text-start pb-3">
+          <a
+            [routerLink]="'/services/be-development'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="keen-slider__slide number-slide1"
+      *ngIf="serviceName != 'mobile'"
+    >
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="mobileIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">Mobile App <br />Development</h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Building robust, scalable, and secure server-side solutions to
+              power seamless and efficient web applications.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+          <a
+            [routerLink]="'/services/mobile-app-development'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'ui'">
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="uiIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">User Interface and <br />Experience Designs</h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Creating intuitive, engaging, and visually appealing user
+              experiences that delight and retain your customers.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+          <a
+            [routerLink]="'/services/ui-ux-designing'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="keen-slider__slide number-slide1"
+      *ngIf="serviceName != 'graphics'"
+    >
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="graphicIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            High Quality <br />
+            Graphic Designs
+          </h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Crafting visually stunning and impactful designs that communicate
+              your brand’s message and captivate your audience.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+          <a
+            [routerLink]="'/services/graphic-designing'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="keen-slider__slide number-slide1"
+      *ngIf="serviceName != 'devops'"
+    >
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="serverIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            DevOps<br />
+            Solutions
+          </h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Creating powerful, user-friendly desktop applications to enhance
+              productivity and streamline processes.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+          <a
+            [routerLink]="'/services/devops'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'law'">
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="computer" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            Customized Software for <br />
+            Law firm
+          </h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              Developing powerful, user-friendly web applications for law firms
+              to enhance productivity and streamline processes.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 pb-3 bg-transparent border-0 text-start">
+          <a
+            [routerLink]="'/services/customized-solutions'"
+            class="text-decoration-none text-dark-green"
+            >Explore now</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <svg
     [ngClass]="
-      'arrow arrow--left tw-fill-confia-dark-green ' + (currentSlide === 0 ? 'tw-fill-confia-dark-green' : 'tw-fill-confia-dark-green')
+      'arrow arrow--left tw-fill-confia-dark-green ' +
+      (currentSlide === 0
+        ? 'tw-fill-confia-dark-green'
+        : 'tw-fill-confia-dark-green')
     "
     (click)="slider?.prev()"
     xmlns="http://www.w3.org/2000/svg"
@@ -165,14 +246,13 @@
   >
     <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
   </svg>
-    <div class="w-100">
-        <div class="dots">
-            <button
-              (click)="slider?.moveToIdx(i)"
-              *ngFor="let slide of dotHelper; let i = index"
-              [class]="'dot ' + (i === currentSlide ? 'active' : '')"
-            ></button>
-          </div>
+  <div class="w-100">
+    <div class="dots">
+      <button
+        (click)="slider?.moveToIdx(i)"
+        *ngFor="let slide of dotHelper; let i = index"
+        [class]="'dot ' + (i === currentSlide ? 'active' : '')"
+      ></button>
     </div>
+  </div>
 </div>
- 

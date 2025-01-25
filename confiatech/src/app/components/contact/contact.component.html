@@ -17,6 +17,7 @@
                 <fa-icon [icon]="location"></fa-icon> 1 Gawthorpe Lane, Wf2 0SR
               </p>
               <a
+                title="whatsapp"
                 href="https://wa.me/+447376059110"
                 class="text-decoration-none text-dark tw-mt-3"
                 ><p class="p-0 m-0">
@@ -24,6 +25,7 @@
                 </p></a
               >
               <a
+                title="Email"
                 href="mailto:uk.contact@confiatech.com"
                 class="text-decoration-none text-dark tw-mt-3"
                 ><p class="p-0 m-0">
@@ -47,6 +49,7 @@
                 Plaza, I-8 Markaz, Islamabad
               </p>
               <a
+                title="whatsapp"
                 href="https://wa.me/+923009840683 "
                 class="text-decoration-none tw-mt-3 text-dark"
                 ><p class="p-0 m-0">
@@ -54,6 +57,7 @@
                 </p></a
               >
               <a
+                title="Email"
                 href="mailto:contact@confiatech.com"
                 class="text-decoration-none text-dark tw-mt-3"
                 ><p class="p-0 m-0">
@@ -92,15 +96,30 @@
       </div>
       <div class="col-12 col-md-12 col-lg-6 col-xl-5">
         <div class="card p-4 mt-3">
-          <form class="row pb-4 align-items-stretch">
+          <form
+            class="row pb-4 align-items-stretch"
+            [formGroup]="contactForm"
+            (ngSubmit)="submit()"
+          >
             <div class="col-12">
               <div class="form-group mb-3">
                 <label>Your Name</label>
                 <input
+                  formControlName="name"
                   type="text"
                   class="form-control p-3 mt-3"
                   placeholder="Your Name"
                 />
+                <small
+                  class="text-danger tw-text-xs"
+                  *ngIf="
+                    contactForm.get('name')?.invalid &&
+                    (contactForm.get('name')?.dirty ||
+                      contactForm.get('name')?.touched)
+                  "
+                >
+                  Name is required
+                </small>
               </div>
             </div>
             <div class="col-12">
@@ -108,10 +127,26 @@
                 <label>Your Email</label>
                 <input
                   type="email"
+                  formControlName="email"
                   class="form-control p-3 mt-3"
                   placeholder="Your Email"
                 />
               </div>
+              <small
+                class="text-danger tw-text-xs"
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  (contactForm.get('email')?.dirty ||
+                    contactForm.get('email')?.touched)
+                "
+              >
+                <span *ngIf="contactForm.get('email')?.hasError('required')">
+                  Email is required
+                </span>
+                <span *ngIf="contactForm.get('email')?.hasError('pattern')">
+                  Email is invalid
+                </span>
+              </small>
             </div>
 
             <div class="col-12">
@@ -119,27 +154,74 @@
                 <label>Subject</label>
                 <input
                   type="text"
+                  formControlName="subject"
                   class="form-control p-3 mt-3"
                   placeholder="Subject"
                 />
               </div>
+              <small
+                class="text-danger tw-text-xs"
+                *ngIf="
+                  contactForm.get('subject')?.invalid &&
+                  (contactForm.get('subject')?.dirty ||
+                    contactForm.get('subject')?.touched)
+                "
+              >
+                Subject is required
+              </small>
             </div>
             <div class="col-12">
               <div class="form-group my-3">
                 <label>Your Query</label>
                 <textarea
                   type="text"
+                  formControlName="message"
                   class="form-control p-3 mt-3 w-100"
                   placeholder="Your Query"
                   rows="8"
                 ></textarea>
+                <small
+                  class="text-danger tw-text-xs"
+                  *ngIf="
+                    contactForm.get('message')?.invalid &&
+                    (contactForm.get('message')?.dirty ||
+                      contactForm.get('message')?.touched)
+                  "
+                >
+                  Please enter your message
+                </small>
+              </div>
+            </div>
+            <div class="col-sm-12 mb-2">
+              <re-captcha
+                id="recaptcha"
+                name="recaptcha"
+                #recaptcha="ngModel"
+                [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="token"
+                required
+                [class.is-invalid]="
+                  recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)
+                "
+              ></re-captcha>
+              <div
+                *ngIf="
+                  recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)
+                "
+                class="invalid-feedback"
+              >
+                <div *ngIf="recaptcha.errors?.['required']">
+                  This field is required.
+                </div>
               </div>
             </div>
             <div class="col-12 text-end">
               <div
                 class="d-flex flex-column h-100 align-items-end justify-content-end"
               >
+                <!-- !this.token || -->
                 <confia-button
+                  [disabled]="contactForm.invalid"
                   [content]="'Send'"
                   [type]="'submit'"
                 ></confia-button>

@@ -6,28 +6,29 @@ module.exports = {
   prefix: "tw-",
   important: true,
   corePlugins: {
-      preflight: true,
+    preflight: true,
   },
   theme: {
- 
-      colors: {
-        'confia-dark-green': '#08777c' ,
-    'confia-aqua':'#18b6c6' ,
-        'confia-light':'#95eaef ',
-        'dark':'#444444 ',
-        'light':'#f6f6f6 ',
-        'white':'#fff'
-        
-      },
-   
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        body:['"Inter"',"sans-serif"],
-        rozha:['"Rozha One"',"serif"],
-        'sans': ['"Inter"',"sans-serif"]
-      },
+
+    colors: {
+      'confia-dark-green': '#08777c',
+      'confia-aqua': '#18b6c6',
+      'confia-light': '#95eaef ',
+      'dark': '#444444 ',
+      'light': '#f6f6f6 ',
+      'white': '#fff'
+
+    },
+
+    fontFamily: {
+      sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      body: ['"Inter"', "sans-serif"],
+      rozha: ['"Rozha One"', "serif"],
+      'sans': ['"Inter"', "sans-serif"]
+    },
     extend: {
       animation: {
+        ping: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite',
         updown: 'updown 2s ease-in-out infinite',
         downUp: 'downUp 2s ease-in-out infinite',
         imageScroll: 'imageScroll 15s ease-in-out infinite',

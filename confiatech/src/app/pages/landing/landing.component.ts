@@ -8,6 +8,7 @@ import { AboutComponent } from "../../components/about/about.component";
 import { ContactComponent } from "../../components/contact/contact.component";
 import { BlogsComponent } from "../../components/blogs/blogs.component";
 import { Meta, Title } from '@angular/platform-browser';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-landing',
@@ -19,8 +20,16 @@ import { Meta, Title } from '@angular/platform-browser';
   export class LandingComponent {
 
     constructor(  private meta: Meta,
+      private analytics:AnalyticsService,
       private title: Title){
         this.title.setTitle("ConfiaTech - Dream Digitizers");
       this.meta.updateTag({ name: 'description', content: 'ConfiaTech Pvt Ltd offers innovative tech solutions in web development, mobile apps, and enterprise software to drive your success' });
-      }
+      this.meta.updateTag({ name: 'keywords', content: 'Customize Web apps, Angular Apps, Django Apps, WordPress Apps, Development, Web Development, Bespoke Solutions, Tech Company, IT Company, Software House' });
+   
+    }
+    ngOnInit(): void {
+      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+      //Add 'implements OnInit' to the class.
+      this.analytics.trackEvent("Home page","Home page loaded into view","Home page");
+    }
 }

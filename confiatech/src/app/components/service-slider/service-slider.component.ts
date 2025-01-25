@@ -2,7 +2,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faLaptopCode, faTerminal, faQrcode, faIcons, faSprayCan, faCodeMerge, faServer, faArrowsToCircle, faHandHoldingHand, faStopwatch } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode, faTerminal, faQrcode, faIcons, faSprayCan, faCodeMerge, faServer, faArrowsToCircle, faHandHoldingHand, faStopwatch, faComputer } from '@fortawesome/free-solid-svg-icons';
 import KeenSlider, { KeenSliderInstance } from "keen-slider"
 @Component({
   selector: 'app-service-slider',
@@ -23,6 +23,7 @@ export class ServiceSliderComponent {
   arrowToCircle=faArrowsToCircle
   handHoldingHand=faHandHoldingHand;
   stopWatch=faStopwatch;
+  computer=faComputer;
   isBrowser:boolean;
   slider:KeenSliderInstance | undefined;
   currentSlide: number = 0
