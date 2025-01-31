@@ -18,14 +18,14 @@ export class AppComponent {
   constructor(private loader:loaderService,private router:Router){
     
 
-this.router.events.subscribe(value => {
-        if(value instanceof NavigationEnd)    {
-          setTimeout(() => {
-            this.loader.loading$.next(false)
-          }, 2000);}
-        if(value instanceof NavigationStart)    {
-          this.loader.loading$.next(true)}
-        });
+// this.router.events.subscribe(value => {
+//         if(value instanceof NavigationEnd)    {
+//           setTimeout(() => {
+//             this.loader.loading$.next(false)
+//           }, 2000);}
+//         if(value instanceof NavigationStart)    {
+//           this.loader.loading$.next(true)}
+//         });
 
   }
   ngAfterViewInit() {

@@ -5,7 +5,7 @@ export const routes:Iroute[]=[
         url:"/",
         type:'text',
         label:'Home',
-         fragment:'home'
+    
     },   {
         url:"/about",
         type:'text',
@@ -25,10 +25,10 @@ export const routes:Iroute[]=[
     //     label:'Blogs',
     // },
     {
-        url:"/",
+        url:"/contact",
         type:'button',
         label:'GET A FREE QUOTE',
-        fragment:'contact'
+      
     },
 
 ]

@@ -8,19 +8,45 @@
           <h1 class="text-dark-green mx-0 px-0 fw-bold tw-mb-5">Portfolio</h1>
         </div>
       </div>
+
+      <ng-container *ngIf="portfolio.length == 0">
+        <div
+          *ngFor="let item of [].constructor(10)"
+          class="col-12 tw-flex col-md-6 col-lg-4 tw-relative tw-overflow-hidden"
+        >
+          <div
+            class="w-100 card p-3 tw-animate-pulse tw-border-none tw-rounded-xl h-100"
+          >
+            <div
+              class="tw-min-w-[384px] tw-bg-dark/20 tw-min-h-[256px] tw-rounded-xl"
+            ></div>
+            <div class="tw-grid tw-grid-cols-3 gap-3 tw-mt-6">
+              <div
+                class="tw-h-8 rounded tw-col-span-2 tw-rounded tw-bg-dark/20"
+              ></div>
+              <div
+                class="tw-h-8 rounded tw-col-span-1 tw-rounded tw-bg-dark/20"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
       <div
         class="col-12 tw-flex col-md-6 col-lg-4 tw-relative tw-overflow-hidden"
         *ngFor="let item of portfolio"
       >
         <div class="w-100 card p-3 tw-border-none tw-rounded-xl h-100">
-          <p-image
-            [src]="item.image"
-            [previewImageSrc]="item.image"
-            [alt]="item.title"
-            class="w-100 tw-rounded-xl"
-            loading="lazy"
-            [preview]="true"
-          />
+          <div class="tw-min-w-[384px] tw-min-h-[256px] tw-rounded-xl">
+            <p-image
+              [src]="item.image"
+              [previewImageSrc]="item.image"
+              [alt]="item.title"
+              class="w-100 tw-rounded-xl"
+              loading="lazy"
+              [preview]="true"
+            />
+          </div>
 
           <div class="tw-flex tw-items-center justify-content-between my-4">
             <span class="tw-font-bold tw-uppercase">

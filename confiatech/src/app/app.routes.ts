@@ -3,11 +3,12 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [ 
     {path: '', loadComponent: () => import('./pages/landing/landing.component').then(mod => mod.LandingComponent)},
     {path: 'about', loadComponent: () => import('./pages/about-page/about-page.component').then(mod => mod.AboutPageComponent)},
+    {path: 'contact', loadComponent: () => import('./pages/contact-page/contact-page.component').then(mod => mod.ContactPageComponent)},
     {path: 'portfolio', loadComponent: () => import('./pages/portfolio-page/portfolio-page.component').then(mod => mod.PortfolioPageComponent)},
     {path: 'portfolio/details/:id', loadComponent: () => import('./pages/portfolio-page/portfolio-details/portfolio-details.component').then(mod => mod.PortfolioDetailsComponent)},
     {path: 'services', loadComponent: () => import('./pages/service-page/service-page.component').then(mod => mod.ServicePageComponent)},
-    {path: 'services/fe-development', loadComponent: () => import('./pages/service-page/fe-development/fe-development.component').then(mod => mod.FEDevelopmentComponent)},
-    {path: 'services/be-development', loadComponent: () => import('./pages/service-page/be-development/be-development.component').then(mod => mod.BeDevelopmentComponent)},
+    {path: 'services/frontend-development', loadComponent: () => import('./pages/service-page/fe-development/fe-development.component').then(mod => mod.FEDevelopmentComponent)},
+    {path: 'services/backend-development', loadComponent: () => import('./pages/service-page/be-development/be-development.component').then(mod => mod.BeDevelopmentComponent)},
     {path: 'services/mobile-app-development', loadComponent: () => import('./pages/service-page/mobile-development/mobile-development.component').then(mod => mod.MobileDevelopmentComponent)},
     {path: 'services/ui-ux-designing', loadComponent: () => import('./pages/service-page/ui-designing/ui-designing.component').then(mod => mod.UiDesigningComponent)},
     {path: 'services/graphic-designing', loadComponent: () => import('./pages/service-page/graphics/graphics.component').then(mod => mod.GraphicsComponent)},
@@ -17,11 +18,7 @@ export const routes: Routes = [
     {path: 'blogs', loadComponent: () => import('./pages/blogs-page/blogs-page.component').then(mod => mod.BlogsPageComponent)},
     {
         path:"**",
-     redirectTo:"not-found",
-     
-    }, {
-        path:"not-found",
-        loadComponent: () => import('./pages/not-found/not-found.component').then(mod => mod.NotFoundComponent)
-    }
 
+     loadComponent: () => import('./pages/not-found/not-found.component').then(mod => mod.NotFoundComponent)
+    }
 ];

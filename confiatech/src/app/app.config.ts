@@ -15,5 +15,30 @@ export const appConfig: ApplicationConfig = {
     
     
    
-  })), provideAnimations(), provideHttpClient(),provideClientHydration(),provideGoogleAnalytics('G-06BPS7FXZY'), importProvidersFrom([BrowserAnimationsModule])]
+  })), provideAnimations(), provideHttpClient(),provideClientHydration(), {
+    // Custom provider to lazy load Google Analytics
+    provide: 'googleAnalytics',
+    useFactory: () => {
+      return new Promise<void>((resolve) => {
+        const checkFCPAndLCP = () => {
+          if (window.performance) {
+      
+            
+            const fcp = performance.getEntriesByName('first-contentful-paint')[0];
+            const lcp = performance.getEntriesByName('largest-contentful-paint')[0];
+        
+            if (fcp && lcp) {
+              // If both FCP and LCP are available, load Google Analytics
+              provideGoogleAnalytics('G-06BPS7FXZY');
+              resolve();
+            } else {
+              // Retry after a short delay if FCP/LCP are not available yet
+              setTimeout(checkFCPAndLCP, 100);
+            }
+          }
+        };
+        checkFCPAndLCP();
+      });
+    }
+  }, importProvidersFrom([BrowserAnimationsModule])]
 };
