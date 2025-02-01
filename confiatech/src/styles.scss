@@ -38,23 +38,22 @@ body{
         span {
           margin-right: 10px !important;
         }
+     
       }
+      
       &:last-child{
        a{
         color: $light;
        }
     }
 
-      &:hover,
-      &.active {
-
-       
-        a {
-          color: $confia-dark-green;
-        }
-      }
+   
     }
   }
+  .active{
+    color:$confia-aqua !important;
+
+   }
 .cursor-pointer{
     cursor: pointer !important;
 }
