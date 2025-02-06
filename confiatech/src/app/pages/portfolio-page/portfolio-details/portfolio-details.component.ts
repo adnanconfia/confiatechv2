@@ -1,5 +1,5 @@
 import { PortfolioServiceService } from './../../../services/portfolio-service.service';
-import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { DomSanitizer, Meta, Title } from '@angular/platform-browser';
 import { portfolio } from '../../../services/portfolio-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -23,6 +23,7 @@ export class PortfolioDetailsComponent {
   isBrowser:boolean=false;
   constructor(private title:Title,private portfolioService:PortfolioServiceService,private router:Router,private loader:loaderService,
      @Inject(PLATFORM_ID) platformId: Object,
+     private cdr:ChangeDetectorRef,
     private activatedRoute:ActivatedRoute,private meta:Meta,private sanitizer: DomSanitizer){
       this.isBrowser = isPlatformBrowser(platformId);
     }
@@ -33,7 +34,8 @@ export class PortfolioDetailsComponent {
     this.router.events.subscribe(() => {
       // This will be called every time the route changes
       var id = this.activatedRoute.snapshot.paramMap.get('id');
-    
+ 
+      this.cdr.detectChanges()
     this.loadPortfolio(id);
     });
 

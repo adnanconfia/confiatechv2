@@ -77,4 +77,4 @@ export type Color = 'text-white'| 'text-dark-green'| 'text-semi-light'|'text-dan
 export type border = 'border-0'|'border border-dark-green' | 'border border-danger';
 export type BorderRadius = 'br-12px' | 'br-6px';
 export type iconPosition = 'right'| 'left' | 'center';
-export type buttonType = 'button' | 'submit' | 'link';
+export type buttonType = 'button' | 'submit' | 'link'|'externalLink';

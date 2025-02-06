@@ -134,3 +134,36 @@
     class="ms-2"
   ></fa-icon>
 </a>
+
+<a
+  href="{{ URL }}"
+  [title]="URL"
+  target="{{ target }}"
+  *ngIf="type == 'externalLink'"
+  class="{{ color }} {{ isCenter ? 'mx-auto' : '' }} {{ hoverClass }} {{
+    icon && !content ? 'px-0' : padding
+  }}  text-center {{ fontSize }} {{ fontWeight }}  
+ {{ borderRadius }} btn {{ backgroundColor }} {{ width ? 'w-100' : '' }} {{
+    border
+  }} {{ icon ? 'd-flex algin-items-center justify-content-center' : '' }}"
+  [type]="type"
+>
+  <fa-icon
+    [icon]="icon"
+    *ngIf="icon && iconPosition == 'left'"
+    class="me-2"
+  ></fa-icon>
+  <fa-icon
+    [icon]="icon"
+    *ngIf="icon && iconPosition == 'center' && !content"
+    class=""
+  ></fa-icon>
+  <ng-container *ngIf="content">
+    {{ content }}
+  </ng-container>
+  <fa-icon
+    [icon]="icon"
+    *ngIf="icon && iconPosition == 'right'"
+    class="ms-2"
+  ></fa-icon>
+</a>

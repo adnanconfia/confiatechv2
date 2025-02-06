@@ -37,6 +37,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
       //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
       //Add 'implements OnInit' to the class.
       this.analytics.trackEvent("Home page","Home page loaded into view","Home page");
+
     }
  @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -51,23 +52,68 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
         !this.compsRendered &&
         scrollPosition >= componentPos
       ) {
-        this.compsRendered = true;
+    
         this.loadComponents();
       }
     }
     }
-    private loadComponents(){ 
-    var comps :any[]= [
-      PortfolioCompComponent,
-      AboutComponent,
-      PhasesComponent,
-      ClientCompComponent,
-      ContactComponent
-    ];
-    comps.forEach(item => {
-      
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(item);
-      this.components.createComponent(componentFactory);
+async ngAfterViewInit() {
+ setTimeout(async () => {
+  await this.waitForLCPAndFCP();
+ },3800);
+}
+private waitForLCPAndFCP(): Promise<void> {
+  return new Promise((resolve) => {
+    if(this.isBrowser){
+    if (!('PerformanceObserver' in window)) {
+      resolve();
+      return;
+    }
+}
+    let fcpDone = false;
+    let lcpDone = false;
+
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+       
+        if (entry.name === 'first-contentful-paint') {
+          fcpDone = true;
+        }
+        if (entry.entryType === 'largest-contentful-paint') {
+          lcpDone = true;
+        }
+      }
+
+      if (fcpDone && lcpDone) {
+        observer.disconnect();
+        this.loadComponents()
+        resolve();
+      }
     });
+
+    observer.observe({ type: 'paint', buffered: true });
+    observer.observe({ type: 'largest-contentful-paint', buffered: true });
+
+    // Fallback timeout in case LCP/FCP detection fails
+    setTimeout(resolve, 3000);
+  });
+}
+    private loadComponents(){ 
+if(!this.compsRendered){
+  var comps :any[]= [
+    PortfolioCompComponent,
+    AboutComponent,
+    PhasesComponent,
+    ClientCompComponent,
+    ContactComponent
+  ];
+  this.compsRendered = true;
+  comps.forEach(item => {
+    
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(item);
+    this.components.createComponent(componentFactory);
+  });
+}
+  
     }
 }
