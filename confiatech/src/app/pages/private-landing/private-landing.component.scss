@@ -1,0 +1,114 @@
+
+@import '../../utils/colors/color.scss';
+@import '../../../../node_modules/keen-slider/keen-slider.min.css';
+.hero-bg{
+    background-size: 180px 180px;
+    background-image:
+    linear-gradient(to left, rgb(204 204 204 / 30%) 1px, transparent 1px),
+    linear-gradient(to top,rgb(204 204 204 / 30%)  1px, transparent 1px);
+
+}
+.accordion-button:not(.collapsed) {
+    background-color: $confia-dark-green-o;
+    color: $confia-dark-green !important;
+}
+.hero_des_col{
+    & > img{
+        // width: 176px;
+        // height: 264px;
+        // background-color: $confia-dark-green;
+
+        // border-radius: 15px;
+        // overflow: hidden;
+        // transition: all 1s;
+        &:nth-of-type(odd){
+            animation: zoom 5s infinite;
+        }
+        &:nth-of-type(even){
+            animation: zoom 4s infinite;
+        }
+
+     
+    }
+}
+.service-row{
+    row-gap: 50px;
+    .card{
+        box-shadow: rgba(33, 35, 38, 0.15) 0px 10px 10px -10px;
+        border-radius: 12px !important;
+        border: 1px solid $light;
+        &:hover{
+            
+            border: 1px solid $confia-dark-green;
+
+        }
+    }
+}
+
+.keen-slider__slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    filter: grayscale(0.5);
+    img{
+        transition: transform 1s ease-in-out;
+    }
+    &:hover{
+        filter: grayscale(0);
+       img{
+        transform: scale(1.1);
+       }
+    }
+    .card{
+        box-shadow: rgba(33, 35, 38, 0.15) 0px 10px 10px -10px;
+        border-radius: 12px !important;
+        padding: 10px;
+        border: 1px solid $light;
+    
+    }
+}
+.navigation-wrapper {
+    position: relative;
+    .keen-slider{
+        min-height: 320px;
+    }
+  }
+ 
+  .arrow {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    // background-color: $white;
+    
+  }
+  
+  .arrow--left {
+    left:-10px;
+    // width: 30px;
+    
+    
+    fill: $confia-dark-green;
+    cursor: pointer;
+  }
+  
+  .arrow--right {
+    left: auto;
+    // width: 30px;
+    right: -10px;
+    
+    fill: $confia-dark-green;
+    cursor: pointer;
+  }
+  
+  .arrow--disabled {
+    fill:$confia-dark-green;
+  }

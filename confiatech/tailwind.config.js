@@ -16,7 +16,8 @@ module.exports = {
       'confia-light': '#95eaef ',
       'dark': '#444444 ',
       'light': '#f6f6f6 ',
-      'white': '#fff'
+      'white': '#fff',
+      'gold': '#FFD700'
 
     },
 

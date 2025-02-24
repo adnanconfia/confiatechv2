@@ -16,6 +16,7 @@ export class PortfolioCompComponent {
   @ViewChild("sliderRef2") sliderRef2!: ElementRef<HTMLElement>
   @Input() Id:number=0;
   @Input() isHome:boolean=true;
+  @Input() privatePage:boolean=false;
   slider: KeenSliderInstance | undefined ;
   slider2: KeenSliderInstance | undefined ;
   isBrowser:boolean;

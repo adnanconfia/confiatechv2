@@ -7,7 +7,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 import { provideHttpClient } from '@angular/common/http';
 import { provideGoogleAnalytics } from '@hakimio/ngx-google-analytics';
 
-export const googleAnalyticsProviders = makeEnvironmentProviders([
+export const googleAnalyticsProviders = makeEnvironmentProviders([  
   provideGoogleAnalytics('G-06BPS7FXZY')
 ]);
 export const appConfig: ApplicationConfig = {

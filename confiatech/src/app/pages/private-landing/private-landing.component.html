@@ -1,0 +1,824 @@
+<!-- Modal -->
+<div class="modal fade tw-backdrop-blur-md show" id="cookieConsent">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          We Value Your Privacy
+        </h5>
+        <button type="button" class="btn-close" (click)="accept()"></button>
+      </div>
+      <div class="modal-body">
+        We use cookies to enhance your browsing experience. By continuing to use
+        this site, you consent to our use of cookies.
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          (click)="accept()"
+          class="btn bg-danger tw-text-white"
+        >
+          Reject
+        </button>
+        <button
+          type="button"
+          (click)="accept()"
+          class="btn tw-bg-confia-dark-green tw-text-white"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Hero -->
+<div
+  class="w-100 bg-dark-green-o hero-bg tw-overflow-hidden tw-flex-col tw-flex tw-items-center tw-justify-center"
+>
+  <div
+    class="container-lg mx-auto tw-h-full tw-py-40 tw-relative tw-flex-col tw-flex tw-items-center tw-justify-center"
+  >
+    <div
+      class="tw-h-96 tw-w-96 tw-p-[42rem] tw-top-1/2 tw-animate-ping tw-animate-duration-[10000] tw-absolute tw-bg-gradient-to-b tw-from-confia-light/15 tw-via-5% tw-to-white/5 tw-to-50% tw-rounded-full tw-flex tw-items-center tw-justify-center"
+    >
+      <div
+        class="tw-h-72 tw-w-72 tw-p-[37rem] tw-relative tw-rounded-full tw-bg-gradient-to-b tw-from-confia-aqua/15 tw-via-5% tw-to-white/5 tw-to-50% tw-flex tw-items-center tw-justify-center"
+      >
+        <div
+          class="tw-h-52 tw-w-52 tw-p-[32rem] tw-bg-gradient-to-b relative tw-from-confia-dark-green/15 tw-via-40% tw-via-white/5 tw-to-transparent tw-from-20% tw-rounded-full"
+        ></div>
+      </div>
+    </div>
+    <div class="row w-100 align-items-stretch tw-justify-center">
+      <div
+        class="col-12 col-md-11 col-lg-9 tw-h-full tw-flex tw-flex-col tw-justify-center"
+      >
+        <div class="text-center">
+          <h1 class="tw-text-4xl md:tw-text-6xl fw-bold">
+            Transforming Ideas into Interactive Online Experiences
+          </h1>
+          <p class="mt-2 line-height-1p3 fs-hero-subheading fw-300">
+            Every groundbreaking idea starts with the right tech partner. Ready
+            to create something extraordinary?
+          </p>
+          <confia-button
+            content="Let's innovate together"
+            type="button"
+            (confia_btn_click)="loadCalendly()"
+            [isCenter]="true"
+            hoverClass="heroBtnHover my-5 px-3 px-md-5 py-3 tw-z-10 tw-relative py-2"
+          ></confia-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services -->
+
+<div class="w-100 {{ 'bg-dark-green-o' }} py-5">
+  <div class="container py-5">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div
+          class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between"
+        >
+          <h2 class="{{ 'text-dark-green' }} mx-0 px-0   fw-bold">
+            Discover Our Expertise
+          </h2>
+          <!-- <confia-button content="Get a quote" type="button"  [width]="true" *ngIf="!isServicePage" backgroundColor="bg-white"
+                    fontWeight="fw-400 mt-3" color="text-dark-green" padding="p-2"></confia-button> -->
+          <confia-button
+            content="Get a quote"
+            type="link"
+            fragment="contact"
+            URL="/custom-web-apps/"
+            [width]="true"
+            backgroundColor="bg-dark-green"
+            fontWeight="fw-400 mt-3 mt-md-0 "
+            color="text-white"
+            hoverClass="heroBtnHover"
+            padding="p-2 px-5"
+          ></confia-button>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4 pb-5 service-row">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="laptopCodeIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Front-End <br />
+              Development
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Crafting visually stunning, responsive, and user-friendly
+                interfaces that captivate and engage your audience.
+                <!-- {{ feStr | slice : 0 : 110 }}
+                                @if(feStr.length>110){ ... } -->
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 bg-transparent border-0 pb-3 text-start"
+          ></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="backEndIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Back-End <br />
+              Web Development
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Building robust, scalable, and secure server-side solutions to
+                power seamless and efficient web applications.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 bg-transparent border-0 text-start pb-3"
+          ></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="mobileIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">Mobile App <br />Development</h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Building robust, scalable, and secure server-side solutions to
+                power seamless and efficient web applications.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 pb-3 bg-transparent border-0 text-start"
+          ></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="uiIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">User Interface and <br />Experience Designs</h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Creating intuitive, engaging, and visually appealing user
+                experiences that delight and retain your customers.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 pb-3 bg-transparent border-0 text-start"
+          ></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="graphicIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              High Quality <br />
+              Graphic Designs
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Crafting visually stunning and impactful designs that
+                communicate your brand’s message and captivate your audience.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 pb-3 bg-transparent border-0 text-start"
+          ></div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="serverIcon" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              DevOps<br />
+              Solutions
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Creating powerful, user-friendly desktop applications to enhance
+                productivity and streamline processes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 pb-3 bg-transparent border-0 text-start"
+          ></div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="computer" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Customized Software for <br />
+              Law firm
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="p-0 m-0">
+                Developing powerful, user-friendly web applications for law
+                firms to enhance productivity and streamline processes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="card-footer mt-1 pb-3 bg-transparent border-0 text-start"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-100 mb-min-8per">
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-12 col-md-6 pe-md-0 p-0">
+          <div class="serviceType h-100 bg-dark-green">
+            <div
+              class="w-100 p-4 d-flex align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="text-white mt-3 fw-bold">
+                  TRANSFORM YOUR VISION INTO REALITY
+                </h5>
+                <h6 class="text-light">Fixed Cost Projects</h6>
+                <p class="text-light mt-3">
+                  Experience a seamless product development journey from concept
+                  to completion with optimized development costs.
+                </p>
+                <confia-button
+                  [content]="'START YOUR PROJECT '"
+                  hoverClass="whiteBtnHover"
+                  fontSize="fs-14px"
+                  padding="px-3 py-2 mt-4"
+                  fontWeight="fw-400"
+                  color="text-dark-green"
+                  backgroundColor="bg-light"
+                  borderRadius="br-6px"
+                  fragment="contact"
+                  type="link"
+                  URL="/custom-web-apps/"
+                ></confia-button>
+              </div>
+              <div>
+                <img
+                  ngSrc="../../../assets/images/serviceAnim1.gif"
+                  width="150"
+                  height="150"
+                  alt="Service Animation"
+                  loading="lazy"
+                  fetchpriority="low"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 ps-md-0 p-0">
+          <div class="serviceType2 h-100 bg-dark-green-o">
+            <div
+              class="w-100 p-4 d-flex align-items-center justify-content-between"
+            >
+              <div>
+                <h5 class="text-dark-green mt-3 fw-bold">
+                  LEVERAGE OUR EXPERTISE
+                </h5>
+                <h6 class="tw-text-dark tw-font-bold">IT Staff Augmentation</h6>
+                <p class="text-muted mt-3">
+                  Accelerate your projects with top-tier technical and
+                  managerial talent. Boost quality and efficiency while
+                  maintaining full team control.
+                </p>
+                <confia-button
+                  [content]="'PARTNER WITH US'"
+                  fontSize="fs-14px"
+                  padding="px-4 py-2 "
+                  hoverClass="heroBtnHover"
+                  fontWeight="fw-400"
+                  color="text-white"
+                  backgroundColor="bg-dark-green"
+                  borderRadius="br-6px"
+                  fragment="contact"
+                  type="link"
+                  URL="/custom-web-apps/"
+                ></confia-button>
+              </div>
+              <div>
+                <img
+                  ngSrc="../../../assets/images/serviceAnim2.gif"
+                  width="150"
+                  height="150"
+                  alt="Service Animation"
+                  loading="lazy"
+                  fetchpriority="low"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-100 py-5 mt-5">
+  <div class="container mt-5 py-5">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div
+          class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between"
+        >
+          <h2 class="text-dark-green mx-0 px-0 fw-bold">Why Choose us?</h2>
+          <!-- <confia-button content="Get a quote" type="button"  [width]="true" *ngIf="!isServicePage" backgroundColor="bg-white"
+                fontWeight="fw-400 mt-3" color="text-dark-green" padding="p-2"></confia-button> -->
+          <confia-button
+            content="Get a quote"
+            fragment="contact"
+            URL="/custom-web-apps/"
+            [width]="true"
+            backgroundColor="bg-dark-green"
+            fontWeight="fw-400 mt-3 mt-md-0 "
+            color="text-white"
+            hoverClass="heroBtnHover"
+            padding="p-2 px-5"
+            type="link"
+          ></confia-button>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4 service-row">
+      <div class="col-12 col-md-6 col-lg-4 mx-auto">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="arrowToCircle" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              A Customer-Focused <br />
+              Approach
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="text-justify">
+                This is vital to us as we seek to put our customers first.
+                During the initiation of any project, we don’t skip the process
+                of getting to know your distinct challenges, ambitions and
+                concepts. Consequently, this allows us to develop individualized
+                IT solutions that really meet your needs and bring actual
+                improvements in your business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mx-auto">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="handHoldingHand" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Expertise You Can<br />
+              Trust
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="text-justify">
+                Our professionals come with diverse backgrounds and are
+                committed to the field of technology. For this reason, we have
+                in the recent past focused in creating web and mobile
+                application. To develop cutting-edge solutions for your
+                organization, we apply up-to-date strategies and tools that can
+                be identified in our background as a team.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mx-auto">
+        <div class="card px-4 py-3 h-100 border-0">
+          <div class="card-header bg-transparent border-0">
+            <div
+              class="w-50px h-50px my-4 text-dark-green rounded-circle text-white d-flex align-items-center justify-content-start"
+            >
+              <fa-icon [icon]="stopWatch" size="2x"></fa-icon>
+            </div>
+            <h5 class="fw-bold">
+              Reliable and Timely<br />
+              Delivery (24/7 support)
+            </h5>
+          </div>
+          <div class="card-body py-0 border-0">
+            <div class="">
+              <p class="text-justify">
+                We understand how crucial it's miles to satisfy cut-off dates
+                without sacrificing fine. With over 10 years inside the IT
+                industry, we have the understanding and assets to deliver
+                top-notch solutions on time, whenever. You can anticipate us to
+                offer terrific provider and aid at some stage in your
+                undertaking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Projects -->
+
+<app-portfolio-comp [privatePage]="true"></app-portfolio-comp>
+
+<!-- Expertise -->
+<div class="w-100 py-5">
+  <div class="container py-5">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div
+          class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between"
+        >
+          <h2 class="text-dark-green mx-0 px-0 fw-bold">Our Expertise</h2>
+          <confia-button
+            content="Get a quote"
+            type="button"
+            fragment="contact"
+            URL="/custom-web-apps/"
+            backgroundColor="bg-dark-green"
+            fontWeight="fw-400 mt-3 mt-md-0 "
+            color="text-white"
+            hoverClass="heroBtnHover"
+            padding="p-2 px-5"
+            type="link"
+          ></confia-button>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5">
+        <p>
+          At Confiatech, we specialize in delivering expert custom web
+          solutions, cutting-edge mobile app development, intuitive UI/UX
+          designs, efficient DevOps practices, and creative graphic designing.
+          Our team combines technical expertise with innovative design to build
+          seamless, user-centric digital experiences.
+        </p>
+      </div>
+      <div class="col-12 col-md-6 mt-2">
+        <h6 class="tw-font-bold tw-text-2xl tw-text-confia-dark-green">
+          Technology Stack we are expert in:
+        </h6>
+        <ul
+          class="tw-list-[square] marker:tw-text-confia-dark-green marker:tw-text-2xl"
+        >
+          <li>Angular</li>
+          <li>React</li>
+          <li>Django</li>
+          <li>Node JS</li>
+          <li>.Net Core</li>
+          <li>Bootstrap</li>
+          <li>Tailwind</li>
+          <li>Figma</li>
+          <li>Adobe Illustrator/Canva/Photoshop</li>
+          <li>AWS</li>
+          <li>CI/CD Pipelines</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div
+        class="col-12 col-md-6 mt-2 tw-flex tw-flex-col tw-justify-center tw-items-center"
+      >
+        <img
+          ngSrc="../../../../assets/services/fe_icons.png"
+          alt="FE ICONS"
+          width="440"
+          height="456"
+          class="tw-max-w-full"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<div class="w-100 bg-dark-green-o py-5">
+  <div class="container py-5">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div
+          class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-between"
+        >
+          <h2 class="text-dark-green mx-0 px-0 fw-bold">
+            What Our Clients Say
+          </h2>
+          <confia-button
+            content="Get a quote"
+            type="button"
+            fragment="contact"
+            URL="/custom-web-apps/"
+            backgroundColor="bg-dark-green"
+            fontWeight="fw-400 mt-3 mt-md-0 "
+            color="text-white"
+            hoverClass="heroBtnHover"
+            padding="p-2 px-5"
+            type="link"
+          ></confia-button>
+        </div>
+      </div>
+    </div>
+    <div class="navigation-wrapper">
+      <div class="keen-slider" #sliderRef>
+        @for (item of [].constructor(10); track $index) {
+        <div class="keen-slider__slide number-slide1">
+          <div class="card">
+            <div class="card-body tw-text-center">
+              <svg
+                class="tw-w-7 tw-h-27 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 14"
+              >
+                <path
+                  d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
+                />
+              </svg>
+              "Confiatech transformed our vision into reality! Their team is
+              professional, efficient, and truly understands our needs."
+              <div class="tw-text-gold">
+                <fa-icon [icon]="star"></fa-icon>
+                <fa-icon [icon]="star"></fa-icon>
+                <fa-icon [icon]="star"></fa-icon>
+                <fa-icon [icon]="star"></fa-icon>
+                <fa-icon [icon]="star"></fa-icon>
+              </div>
+            </div>
+            <div
+              class="card-footer tw-border-0 tw-bg-white gap-2 tw-flex tw-items-center tw-justify-center"
+            >
+              <div
+                class="tw-w-9 tw-h-9 tw-bg-dark/30 tw-rounded-full tw-flex tw-items-center tw-justify-center"
+              >
+                <label>S</label>
+              </div>
+              <div class="tw-text-xs">
+                <p class="m-0 tw-font-bold">Sarah L.</p>
+                <p class="tw-font-light m-0">CEO of TechNova</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <div class="arrow arrow--left">
+        <svg
+          [ngClass]="
+            ' arrow--left w-30px' +
+            (currentSlide === 0 ? ' arrow--disabled' : '')
+          "
+          (click)="slider?.prev()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"
+          />
+        </svg>
+      </div>
+      <div class="arrow arrow--right">
+        <svg
+          *ngIf="slider"
+          [ngClass]="
+            ' arrow--right w-30px' +
+            (slider.track.details.slides.length - 1 === currentSlide
+              ? ' arrow--disabled'
+              : '')
+          "
+          (click)="slider.next()"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="w-100 py-5">
+  <div class="container py-5">
+    <div class="row pb-4">
+      <div class="col-12">
+        <div
+          class="d-flex w-100 flex-sm-row flex-column align-items-center justify-content-center"
+        >
+          <h2 class="text-dark-green mx-0 px-0 fw-bold">People also ask</h2>
+        </div>
+      </div>
+
+      <div class="col-12 mt-5">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Accordion Item #1
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is
+                shown by default, until the collapse plugin adds the appropriate
+                classes that we use to style each element. These classes control
+                the overall appearance, as well as the showing and hiding via
+                CSS transitions. You can modify any of this with custom CSS or
+                overriding our default variables. It's also worth noting that
+                just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Accordion Item #2
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Accordion Item #3
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is
+                hidden by default, until the collapse plugin adds the
+                appropriate classes that we use to style each element. These
+                classes control the overall appearance, as well as the showing
+                and hiding via CSS transitions. You can modify any of this with
+                custom CSS or overriding our default variables. It's also worth
+                noting that just about any HTML can go within the
+                <code>.accordion-body</code>, though the transition does limit
+                overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Consultation -->
+<div class="w-100 bg-dark-green-o py-5">
+  <div class="container py-5">
+    <div class="row pb-4">
+      <div class="col-12 tw-mx-auto col-md-8 col-lg-6">
+        <div class="w-100">
+          <h2 class="text-dark-green mx-0 px-0 fw-bold tw-text-center">
+            Schedule a Consultation Call Today
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 tw-mx-auto col-md-8 col-lg-6">
+        <p class="tw-text-center">
+          Take the next step toward success! Book a personalized consultation
+          call with our experts to discuss your needs and find the best
+          solutions for your business.
+        </p>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12 tw-mx-auto tw-flex tw-items-center tw-justify-center">
+        <confia-button
+          content="Book Call Now"
+          type="button"
+          (confia_btn_click)="loadCalendly()"
+          backgroundColor="bg-dark-green"
+          fontWeight="fw-400 mt-3 mt-md-0 "
+          color="text-white"
+          hoverClass="heroBtnHover"
+          fontSize=" tw-text-lg md:tw-text-4xl"
+          padding="p-3 px-5"
+        ></confia-button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact -->
+<div id="content">
+  <app-contact></app-contact>
+</div>

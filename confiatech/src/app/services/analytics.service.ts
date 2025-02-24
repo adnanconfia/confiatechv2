@@ -12,5 +12,10 @@ export class AnalyticsService {
        eventCategory,     eventDetails
     )
   
+  
+  }
+  eventWithParam(eventName:string,params:any){
+    this.gtag.gtag('event',eventName,params)
   }
 }
+

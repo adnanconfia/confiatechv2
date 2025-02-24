@@ -1,4 +1,4 @@
-<div class="w-100">
+<div class="w-100 {{ privatePage ? 'bg-dark-green-o pt-5' : '' }}">
   <div class="w-100">
     <div class="w-100">
       <h2 class="text-dark-green mx-0 tw-text-center px-0 tw-py-6 fw-bold">
@@ -53,6 +53,7 @@
           <ng-container *ngFor="let item of portfolioReverse; let i = index">
             <div class="keen-slider__slide number-slide1">
               <div
+                *ngIf="!privatePage"
                 class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
               >
                 <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">
@@ -121,6 +122,7 @@
           <ng-container *ngFor="let item of portfolio; let i = index">
             <div class="keen-slider__slide number-slide1">
               <div
+                *ngIf="!privatePage"
                 class="tw-fixed tw-w-full tw-h-full portfolio-overlay tw-bg-confia-dark-green/70 tw-z-[1] tw-flex-col tw-items-center tw-justify-center"
               >
                 <h3 class="tw-font-bold tw-text-white tw-mb-5 tw-uppercase">

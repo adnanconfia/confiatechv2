@@ -23,5 +23,15 @@ export class DevopsComponent {
     this.meta.updateTag({ name: 'keywords', content: 'docker, Kubernetes, CI/CD pipelines, GITHUB , AWS , Azure, GCP , Jenkins, Share Hosting , Hosting, Email Server , Domain , Clusters, EC2 , ECS, EKS , Lamda Functions' });
    
     this.analytics.trackEvent("Devops page","Devops page loaded into view","Devops page");
+    // this.analytics.eventWithParam("Devops Loaded",{
+    //   "transaction_id":123566,
+    //   "value":23500,
+    //   "currency":'$',
+    //   "item":`[{"name":"item1","price":123}]`,
+    //   "payment_method":"stripe 2",
+    //   "Discount":1234
+    // })
+
+
   }
 }
