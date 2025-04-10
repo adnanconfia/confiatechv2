@@ -8,14 +8,14 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
 export class AnalyticsService {
   private readonly gtag = inject(GoogleAnalyticsService);
   trackEvent(eventName: string, eventDetails: string, eventCategory: string) {
-    this.gtag.event(eventName,
-       eventCategory,     eventDetails
-    )
+    // this.gtag.event(eventName,
+    //    eventCategory,     eventDetails
+    // )
   
   
   }
   eventWithParam(eventName:string,params:any){
-    this.gtag.gtag('event',eventName,params)
+    // this.gtag.gtag('event',eventName,params)
   }
 }
 
