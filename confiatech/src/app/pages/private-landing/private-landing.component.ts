@@ -28,6 +28,7 @@ import {
   faStopwatch,
   faComputer,
   faStar,
+  faRobot,
 } from '@fortawesome/free-solid-svg-icons';
 import { PortfolioCompComponent } from '../../components/portfolio-comp/portfolio-comp.component';
 import { AnalyticsService } from '../../services/analytics.service';
@@ -66,6 +67,7 @@ export class PrivateLandingComponent {
   stopWatch = faStopwatch;
   computer = faComputer;
   star = faStar;
+  aiIcon = faRobot;
   @ViewChild('sliderRef') sliderRef!: ElementRef<HTMLElement>;
   slider: KeenSliderInstance | undefined;
 

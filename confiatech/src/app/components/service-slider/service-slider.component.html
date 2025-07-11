@@ -30,6 +30,36 @@
         </div>
       </div>
     </div>
+    <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'ai'">
+      <div class="card px-4 py-3 h-100 border-0">
+        <div class="card-header bg-transparent border-0">
+          <div
+            class="w-50px h-50px my-4 text-aqua rounded-circle text-white d-flex align-items-center justify-content-start"
+          >
+            <fa-icon [icon]="laptopCodeIcon" size="2x"></fa-icon>
+          </div>
+          <h5 class="fw-bold">
+            Artificial intelligence (AI) <br />
+            Services
+          </h5>
+        </div>
+        <div class="card-body py-0 border-0">
+          <div class="">
+            <p class="p-0 m-0">
+              We deliver cutting-edge AI solutions, automating workflows and
+              driving intelligent insights for business growth.
+            </p>
+          </div>
+        </div>
+        <div class="card-footer mt-1 bg-transparent border-0 pb-3 text-start">
+          <a
+            [routerLink]="'/services/ai-solutions'"
+            class="text-decoration-none text-dark-green"
+            >Learn More</a
+          >
+        </div>
+      </div>
+    </div>
     <div class="keen-slider__slide number-slide1" *ngIf="serviceName != 'be'">
       <div class="card px-4 py-3 h-100 border-0">
         <div class="card-header bg-transparent border-0">
