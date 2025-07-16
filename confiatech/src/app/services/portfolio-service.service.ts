@@ -74,7 +74,7 @@ The e-commerce platform includes key features such as easy navigation, secure pa
 Desi Atta Chakki is a prime example of how a customized WordPress solution can transform a traditional business into a thriving online store. It’s a powerful tool that combines functionality and design to boost sales and build a strong online presence.
 `,
           technologies: ['Wordpress', 'MySQL'],
-          url: 'https://desiattachakki.com/',
+          url: '',
           images: [
             `${window.location.origin}/assets/portfolio/dac/dac1.png`,
             `${window.location.origin}/assets/portfolio/dac/dac2.png`,
@@ -125,7 +125,7 @@ The user interface, powered by Angular, is designed to be simple and smooth, mak
 Impirium is the perfect solution for businesses and organizations that need a secure, reliable platform to protect their data while providing an excellent user experience.
 `,
           technologies: ['Angular', 'Tailwind'],
-          url: 'https://impirium.pakdiagnostic.com/',
+          url: '',
           images: [
             `${window.location.origin}/assets/portfolio/Impirium/impirum1.jpg`,
             `${window.location.origin}/assets/portfolio/Impirium/impirum2.jpg`,
@@ -218,7 +218,7 @@ Deployed on AWS, the platform benefits from reliable and secure cloud hosting, o
 𝗡𝘂𝗴𝗕𝘆𝗛𝗮𝘀𝘀𝗮𝗻 goes beyond being just an online store—it’s a digital showcase of artistry and craftsmanship. By blending technology with stunning design, the platform elevates the online shopping experience, making it a delight for customers. Discover the perfect combination of style, elegance, and functionality with NugByHassan
 `,
           technologies: ['Wordpress'],
-          url: 'https://nugbyhassaan.com/',
+          url: '',
           images: [
             `${window.location.origin}/assets/portfolio/NBH/nbh1.png`,
             `${window.location.origin}/assets/portfolio/NBH/nbh2.png`,
@@ -358,8 +358,52 @@ Sequest Consulting is the trusted partner for manufacturing businesses looking t
           ],
           metaDescription: `Discover Sequest Consulting, a web app for rapid migration to Infor LN, using Angular, Django, and AWS to optimize business processes.`,
         },
+        {
+          id: 15,
+          title: 'BotBlogR',
+          image: `${window.location.origin}/assets/portfolio/botblogr.jpg`,
+          description: `BotBlogR.com is an AI-powered SEO content editor designed to streamline the entire content creation workflow. It combines automated topic research, outline generation, intelligent drafting, and real-time SEO optimization into a single platform. Writers and marketers use BotBlogR to produce high-quality, search-optimized articles faster—maintaining full control over tone and style. By blending AI with deep SEO insights, it helps businesses create content that ranks better on Google while saving significant time.
+`,
+          technologies: ['React', 'Tailwind', 'Fast API'],
+          url: 'https://botblogr.com',
+          images: [
+            `${window.location.origin}/assets/portfolio/botblogr/bb4.png`,
+            `${window.location.origin}/assets/portfolio/botblogr/bb1.png`,
+            `${window.location.origin}/assets/portfolio/botblogr/bb2.png`,
+            `${window.location.origin}/assets/portfolio/botblogr/bb3.png`,
+          ],
+          metaDescription: `BotBlogR.com is an AI SEO content editor that streamlines writing with smart research, outlines, drafting, and optimization—create high-ranking content faster.`,
+        },
+        {
+          id: 16,
+          title: 'Xploraluxe',
+          image: `${window.location.origin}/assets/portfolio/xploraluxe.jpg`,
+          description: `XploraLuxe.com is a Dubai-based luxury lifestyle platform designed to deliver bespoke experiences to high-end clients. The site offers a seamless gateway to an array of premium services, from exotic car rentals—featuring brands like Lamborghini, McLaren, and Porsche—to curated travel experiences and exclusive desert adventures.
+
+XploraLuxe goes beyond simple bookings by providing a dedicated concierge service that helps clients craft personalized itineraries, arrange fine dining, secure last-minute reservations, or coordinate luxury yacht tours. This tailored approach ensures every detail meets the highest standards, catering to those who seek not just services, but memorable, one-of-a-kind experiences.
+
+The platform also serves businesses through premium placement options, enabling select partners to showcase their offerings directly to an affluent audience. Designed with a modern, mobile-friendly interface, XploraLuxe makes browsing and booking intuitive, supported by secure payments and transparent pricing.
+
+Client testimonials underline consistent praise for the team’s professionalism, responsiveness, and commitment to delivering “royal treatment,” reinforcing XploraLuxe’s reputation as a trusted partner in the luxury travel and lifestyle space. By bringing together high-performance vehicles, exclusive leisure experiences, and meticulous concierge support under one roof, XploraLuxe.com stands out as the premier destination for luxury seekers in Dubai and beyond.`,
+          technologies: [
+            'Angular',
+            'Material',
+            'Node js',
+            'MongoDb',
+            'Bootstrap',
+          ],
+          url: 'https://xploraluxe.com',
+          images: [
+            `${window.location.origin}/assets/portfolio/xploraluxe/xl1.png`,
+            `${window.location.origin}/assets/portfolio/xploraluxe/xl2.png`,
+            `${window.location.origin}/assets/portfolio/xploraluxe/xl3.png`,
+            `${window.location.origin}/assets/portfolio/xploraluxe/xl4.png`,
+            `${window.location.origin}/assets/portfolio/xploraluxe/xl5.png`,
+          ],
+          metaDescription: `Discover XploraLuxe.com — Dubai’s premier platform for luxury car rentals, bespoke travel, and concierge experiences tailored to high-end clients.`,
+        },
       ];
-      return portfolioData;
+      return portfolioData.sort((a, b) => b.id - a.id);
     } else {
       return portfolioData;
     }
