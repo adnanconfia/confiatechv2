@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /index.html
+Disallow: /
+Disallow: /cgi-bin/
+Sitemap: https://confiatech.com/assets/sitemap.xml

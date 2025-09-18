@@ -89,18 +89,6 @@ export class PrivateLandingComponent {
   ngOnInit() {
     this.loadCSS('https://assets.calendly.com/assets/external/widget.css');
     this.loadScript('https://assets.calendly.com/assets/external/widget.js');
-    if (this.isBrowser) {
-      // (window as any).dataLayer =     (window as any).dataLayer || [];
-      // (window as any).dataLayer.push({
-      //   'event':'devops',
-      //   "transaction_id":123566,
-      //   "value":23500,
-      //   "currency":'$',
-      //   "item":`[{"name":"item1","price":123}]`,
-      //   "payment_method":"stripe 2",
-      //   "Discount":1234
-      // })
-    }
   }
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
